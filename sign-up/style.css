@@ -1,9 +1,8 @@
 .indicator {
-  width: 80%;
+  width: 95%;
   margin: 0 auto;
   margin-top: 20px;
   max-width: 450px;
-  min-width: 330px;
 }
 @media screen and (min-width: 550px) {
   .indicator {
@@ -151,16 +150,11 @@ input {
   background: linear-gradient(#ff6a3a, #000);
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 20px 0;
-  box-sizing: border-box;
-  min-height: 600px;
 }
 @media screen and (min-width: 500px) {
   .wrapper {
-    min-height: 800px;
+    height: 100vh;
+    box-sizing: border-box;
     padding: 80px 0 45px;
   }
 }
@@ -169,8 +163,16 @@ input {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 600px;
+  height: 100vh;
+  padding: 20px 0;
+  box-sizing: border-box;
   max-height: 650px;
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  .wrapper .height-fix {
+    min-height: 600px;
+  }
 }
 .wrapper .background {
   width: 120%;
@@ -202,7 +204,7 @@ form {
   width: 90%;
   margin: 0 auto;
   max-width: 350px;
-  min-width: 300px;
+  min-width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -214,7 +216,7 @@ form input {
 }
 form input[type="submit"] {
   width: 100%;
-  height: 60px;
+  height: 55px;
   background: rgba(255,255,255,0);
   border-radius: 50px;
   border: 2px solid rgba(255,255,255,0.2);
@@ -226,8 +228,8 @@ form input[type="submit"]:hover {
 }
 form .input-wrapper {
   width: 100%;
-  height: 60px;
-  margin: 5px 0;
+  height: 55px;
+  margin: 7px 0;
   position: relative;
 }
 form .input-wrapper svg.icon {

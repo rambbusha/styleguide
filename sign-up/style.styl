@@ -1,7 +1,7 @@
 @import 'stylus/*'
 
-inputHeight = 60px
-inputMargin = 5px
+inputHeight = 55px
+inputMargin = 7px
 
 .wrapper
   color #fff
@@ -10,19 +10,19 @@ inputMargin = 5px
   background linear-gradient(#FF6A3A,#000000)
   position relative
   overflow hidden
-  display flex
-  align-items center
-  flex-direction column
-  padding 20px 0
-  box-sizing border-box
-  min-height 600px
   @media screen and (min-width 500px)
-    min-height 800px
+    height 100vh
+    box-sizing border-box
     padding 80px 0 45px
   .height-fix
     flexCenter(column)
-    height: 600px;
-    max-height: 650px;
+    height 100vh
+    padding 20px 0
+    box-sizing border-box
+    max-height 650px
+    width 100%
+    @media screen and (min-width 500px)
+      min-height 600px
   .background
     width 120%
     position absolute
@@ -47,7 +47,7 @@ form
   width 90%
   margin 0 auto
   max-width 350px
-  min-width 300px
+  min-width 250px
   flexCenter(column)
   margin-bottom 35px
   input 
