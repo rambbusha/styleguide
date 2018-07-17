@@ -5,6 +5,16 @@
   max-width: 450px;
   min-width: 330px;
 }
+@media screen and (min-width: 550px) {
+  .indicator {
+    min-width: 450px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .indicator {
+    min-width: 700px;
+  }
+}
 ul {
   display: flex;
   align-items: center;
@@ -153,6 +163,14 @@ input {
     min-height: 800px;
     padding: 80px 0 45px;
   }
+}
+.wrapper .height-fix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 600px;
+  max-height: 650px;
 }
 .wrapper .background {
   width: 120%;
