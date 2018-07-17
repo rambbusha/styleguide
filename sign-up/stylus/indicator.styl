@@ -1,0 +1,36 @@
+@import 'mixins'
+
+bubleRadius = 5px
+bigBubleRadius = 25px
+lowOpacity = .3
+
+
+.indicator
+  width 80%
+  margin 0 auto
+  margin-top 20px
+  max-width 450px
+  min-width 330px
+
+ul 
+  flexCenter()
+  width 100%
+  li.buble
+    margin 10px
+    width bigBubleRadius
+    height bigBubleRadius
+    border-radius 50%
+    box-sizing border-box
+    flexCenter()
+    &.active
+      border 1px solid rgba(#fff , lowOpacity)
+    .inner-buble
+      width bubleRadius
+      height bubleRadius
+      border-radius 50%
+      background-color #ffffff
+  li.line
+    height 2px
+    background-color rgba(#fff , lowOpacity)
+    flex-grow 1
+
