@@ -1,7 +1,7 @@
 @import 'stylus/*'
 
-inputHeight = 55px
-inputMargin = 8px
+inputHeight = 60px
+inputMargin = 5px
 
 .wrapper
   color #fff
@@ -15,6 +15,10 @@ inputMargin = 8px
   flex-direction column
   padding 20px 0
   box-sizing border-box
+  min-height 600px
+  @media screen and (min-width 500px)
+    min-height 800px
+    padding 80px 0 45px
   .background
     width 120%
     position absolute
@@ -30,16 +34,18 @@ inputMargin = 8px
 .title
   flexCenter()
   flex-grow 2
+  @media screen and (min-width 500px)
+    font-size 25px
 
 form
   position relative
   z-index 3
-  width 80%
+  width 90%
   margin 0 auto
-  max-width 450px
+  max-width 350px
   min-width 300px
   flexCenter(column)
-  flex-grow 1
+  margin-bottom 35px
   input 
     color #fff
   input[type="submit"]
@@ -49,7 +55,7 @@ form
     border-radius 50px
     border 2px solid rgba(#fff , .2)
     cursor pointer
-    margin-top inputHeight - inputMargin * 3
+    margin-top 40px
     &:hover
       background rgba(#fff , .1)
   .input-wrapper

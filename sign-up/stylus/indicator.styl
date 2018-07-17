@@ -21,6 +21,7 @@ ul
     height bigBubleRadius
     border-radius 50%
     box-sizing border-box
+    position relative
     flexCenter()
     &.active
       border 1px solid rgba(#fff , lowOpacity)
@@ -34,3 +35,16 @@ ul
     background-color rgba(#fff , lowOpacity)
     flex-grow 1
 
+li.buble.active > h4.buble-txt
+  color #fff
+  
+h4.buble-txt
+  display none
+  @media screen and (min-width 500px)
+    color rgba(#fff , lowOpacity)
+    display block
+    font-size: 8px;
+    position: absolute;
+    top: 142%;
+    width: 150%;
+    text-align: center;

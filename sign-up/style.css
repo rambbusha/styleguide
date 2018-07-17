@@ -18,6 +18,7 @@ ul li.buble {
   height: 25px;
   border-radius: 50%;
   box-sizing: border-box;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +37,91 @@ ul li.line {
   height: 2px;
   background-color: rgba(255,255,255,0.3);
   flex-grow: 1;
+}
+li.buble.active > h4.buble-txt {
+  color: #fff;
+}
+h4.buble-txt {
+  display: none;
+}
+@media screen and (min-width: 500px) {
+  h4.buble-txt {
+    color: rgba(255,255,255,0.3);
+    display: block;
+    font-size: 8px;
+    position: absolute;
+    top: 142%;
+    width: 150%;
+    text-align: center;
+  }
+}
+.nav-bar-wrapper {
+  display: none;
+  padding: 25px 20px 10px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 500px) {
+  .nav-bar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    background-color: #f96332;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .nav-bar-wrapper .close {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+  .nav-bar-wrapper .close span.close-line {
+    width: 30px;
+    height: 2px;
+    top: 14px;
+    background: #fff;
+    position: absolute;
+  }
+  .nav-bar-wrapper .close span.close-line:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  .nav-bar-wrapper .close span.close-line:nth-child(1) {
+    transform: rotate(-45deg);
+  }
+  .nav-bar-wrapper svg {
+    fill: #fff;
+    width: 25px;
+    height: 25px;
+  }
+  .nav-bar-wrapper .burger {
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  .nav-bar-wrapper .burger span:nth-child(1) {
+    top: 5px;
+  }
+  .nav-bar-wrapper .burger span:nth-child(2) {
+    top: 14px;
+  }
+  .nav-bar-wrapper .burger span:nth-child(3) {
+    top: 23px;
+  }
+  .nav-bar-wrapper .burger .burger-line,
+  .nav-bar-wrapper .burger .burger-line-small {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+  }
+  .nav-bar-wrapper .burger .burger-line-small {
+    width: 15px;
+  }
 }
 * {
   margin: 0;
@@ -60,6 +146,13 @@ input {
   flex-direction: column;
   padding: 20px 0;
   box-sizing: border-box;
+  min-height: 600px;
+}
+@media screen and (min-width: 500px) {
+  .wrapper {
+    min-height: 800px;
+    padding: 80px 0 45px;
+  }
 }
 .wrapper .background {
   width: 120%;
@@ -80,38 +173,43 @@ input {
   flex-direction: row;
   flex-grow: 2;
 }
+@media screen and (min-width: 500px) {
+  .title {
+    font-size: 25px;
+  }
+}
 form {
   position: relative;
   z-index: 3;
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
-  max-width: 450px;
+  max-width: 350px;
   min-width: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  flex-grow: 1;
+  margin-bottom: 35px;
 }
 form input {
   color: #fff;
 }
 form input[type="submit"] {
   width: 100%;
-  height: 55px;
+  height: 60px;
   background: rgba(255,255,255,0);
   border-radius: 50px;
   border: 2px solid rgba(255,255,255,0.2);
   cursor: pointer;
-  margin-top: 31px;
+  margin-top: 40px;
 }
 form input[type="submit"]:hover {
   background: rgba(255,255,255,0.1);
 }
 form .input-wrapper {
   width: 100%;
-  height: 55px;
-  margin: 8px 0;
+  height: 60px;
+  margin: 5px 0;
   position: relative;
 }
 form .input-wrapper svg.icon {
