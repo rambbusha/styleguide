@@ -6,12 +6,21 @@ inputMargin = 7px
 .wrapper
   color #fff
   width 100%
-  height 100vh
-  background linear-gradient(#FF6A3A,#000000)
+  background orangeBlackGrad
   position relative
   overflow hidden
+  min-height 100vh
+  transition navigationTransition linear transform
+  .black-overlay 
+    fullAbsolute()
+    background rgba(0 , 0 , 0 , .3)
+    z-index 100
+    display none
+  &.translated
+    transform translateX(270px)
+    .black-overlay
+      display block
   @media screen and (min-width 500px)
-    height 100vh
     box-sizing border-box
     padding 80px 0 45px
   .height-fix
@@ -34,6 +43,7 @@ inputMargin = 7px
     background-position 50% 50%
     filter blur(10px)
     opacity .2
+  
 
 .title
   flexCenter()
