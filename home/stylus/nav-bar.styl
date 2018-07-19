@@ -51,18 +51,17 @@ svgRadius = 25px
       .burger-line-small
         width 15px
 
-// <div class='nav-bar-wrapper'>
-//       <div class='burger'>
-//         <span class='burger-line'></span>
-//         <span class='burger-line-small'></span>
-//         <span class='burger-line'></span>
-//       </div>
-//       <div class='logo'>
-//         <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-//           <use xlink:href='svgs/symbol-defs#logo_small'></use>
-//         </svg>
-//       </div>
-//       <div class='close'>
-//           <span class='close-line'></span>
-//           <span class='close-line'></span>
-//       </div>
+.nav-avatar 
+  display none
+  @media screen and (min-width 550px)
+    display block
+    width 25px
+    height 25px
+    background-color #fff
+    border-radius 50%
+    margin-left 10px
+    
+
+@media screen and (min-width 550px)
+  .nav-bar-right
+    display flex

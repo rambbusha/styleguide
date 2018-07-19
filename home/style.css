@@ -3,6 +3,10 @@
   fill: none;
   cursor: pointer;
 }
+svg {
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+}
 .wrapper {
   padding-top: 65px;
 }
@@ -13,6 +17,8 @@
   height: 25px;
 }
 .wrapper .article-infos {
+  max-width: 450px;
+  margin: 0 auto;
   z-index: 2;
   position: relative;
   display: flex;
@@ -20,6 +26,11 @@
   justify-content: flex-end;
   padding: 20px 15px 17px;
   box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  .wrapper .article-infos {
+    max-width: initial;
+  }
 }
 @media screen and (min-width: 730px) {
   .wrapper .article-infos {
@@ -42,13 +53,14 @@
     justify-content: center;
     flex-direction: row;
     text-align: center;
-    max-width: 350px;
+    max-width: 320px;
     align-self: center;
   }
 }
 .wrapper li.article {
   box-sizing: border-box;
   border-top: 1px solid #eaeaea;
+  position: relative;
 }
 @media screen and (min-width: 600px) {
   .wrapper li.article {
@@ -100,6 +112,11 @@
   .wrapper li.article .article-bg {
     height: 100%;
     background: rgba(0,0,0,0.1);
+  }
+}
+@media screen and (min-width: 800px) {
+  .wrapper li.article {
+    height: 350px;
   }
 }
 .wrapper li.article:nth-child(1) {
@@ -168,6 +185,43 @@ ul.articles-more-infos li.category a:after {
   opacity: 0.5;
   left: 0;
   bottom: -5px;
+}
+@media screen and (min-width: 1050px) {
+  ul.articles {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .wrapper li.article {
+    flex-basis: 50%;
+    height: 50vh;
+  }
+  .wrapper li.article:nth-child(1) {
+    height: inherit;
+  }
+  .wrapper h2.article-title {
+    max-width: 250px;
+  }
+  .wrapper li.article:nth-child(4n+0),
+  .wrapper li.article:nth-child(4n+1) {
+    color: #fff;
+  }
+  .wrapper li.article:nth-child(4n+0) h2,
+  .wrapper li.article:nth-child(4n+1) h2 {
+    align-items: flex-end;
+    justify-content: left;
+    max-width: 450px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: left;
+    line-height: 35px;
+    align-self: flex-start;
+  }
+  .wrapper li.article:nth-child(4n+0) .article-bg,
+  .wrapper li.article:nth-child(4n+1) .article-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
 }
 .indicator {
   width: 95%;
@@ -301,6 +355,24 @@ h4.buble-txt {
   }
   .nav-bar-wrapper .burger .burger-line-small {
     width: 15px;
+  }
+}
+.nav-avatar {
+  display: none;
+}
+@media screen and (min-width: 550px) {
+  .nav-avatar {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 10px;
+  }
+}
+@media screen and (min-width: 550px) {
+  .nav-bar-right {
+    display: flex;
   }
 }
 .navigation-bg {

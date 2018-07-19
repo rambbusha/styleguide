@@ -1,0 +1,52 @@
+@import 'mixins'
+
+bubleRadius = 5px
+bigBubleRadius = 25px
+lowOpacity = .3
+
+
+.indicator
+  width 95%
+  margin 0 auto
+  margin-top 20px
+  max-width 450px
+  @media screen and (min-width 550px)
+    min-width 450px
+  @media screen and (min-width 900px)
+    min-width 700px
+  ul 
+    flexCenter()
+    width 100%
+    li.buble
+      margin 10px
+      width bigBubleRadius
+      height bigBubleRadius
+      border-radius 50%
+      box-sizing border-box
+      position relative
+      flexCenter()
+      &.active
+        border 1px solid rgba(#fff , lowOpacity)
+      .inner-buble
+        width bubleRadius
+        height bubleRadius
+        border-radius 50%
+        background-color #ffffff
+    li.line
+      height 2px
+      background-color rgba(#fff , lowOpacity)
+      flex-grow 1
+
+li.buble.active > h4.buble-txt
+  color #fff
+  
+h4.buble-txt
+  display none
+  @media screen and (min-width 500px)
+    color rgba(#fff , lowOpacity)
+    display block
+    font-size: 8px;
+    position: absolute;
+    top: 142%;
+    width: 150%;
+    text-align: center;
