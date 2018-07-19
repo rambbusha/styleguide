@@ -36,4 +36,17 @@ stepCards.forEach((el,idx)=>el.addEventListener('click',(e)=>{
 console.log(tooltipButtons)
 //tablets walkthrough
 tooltips[0].classList.add('active');
-tooltipButtons.forEach((el,idx)=>el.addEventListener('click',(e)=>console.log(el.dataset['for'])))
+tooltipButtons.forEach((el,idx)=>el.addEventListener('click',(e)=>{
+    const action = el.dataset.for;
+    const activeTooltip = document.querySelector('.tooltip.active');
+    const activeId = tooltips.indexOf(activeTooltip);
+    if(action=='next'){
+        activeTooltip.classList.remove('active')
+        tooltips[activeId+1].classList.add('active')
+    }else if(action=='prev'){
+        activeTooltip.classList.remove('active')
+        tooltips[activeId-1].classList.add('active')
+    }else{
+        tooltips.forEach(item=>item.style.display='none')
+    }
+}))
