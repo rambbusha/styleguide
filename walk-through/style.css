@@ -3,10 +3,6 @@
   fill: none;
   cursor: pointer;
 }
-svg {
-  background: rgba(0,0,0,0.4);
-  border-radius: 50%;
-}
 .wrapper {
   padding-top: 65px;
 }
@@ -524,14 +520,30 @@ input {
   justify-content: center;
   flex-direction: row;
   z-index: 400;
+  transition: 0.3s linear all;
+}
+.mobile-walk-through.hidden {
+  opacity: 0;
 }
 @media screen and (min-width: 600px) {
   .mobile-walk-through {
     display: none;
   }
 }
+.done-button {
+  color: #fff;
+  position: absolute;
+  bottom: 30px;
+  display: none;
+  animation: fade 0.4s linear forwards;
+}
+.done-button p {
+  border-radius: 50px;
+  border: 1px solid #fff;
+  padding: 5px 50px;
+  cursor: pointer;
+}
 .mobile-walk-through-wrapper {
-  max-height: 500px;
   height: 100vh;
   width: 100%;
   color: #fff;
@@ -540,28 +552,38 @@ input {
   box-sizing: border-box;
   justify-content: space-between;
   flex-direction: column;
+  padding-bottom: 100px;
 }
 .mobile-walk-through-wrapper p.steps-count {
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-grow: 2;
 }
 .mobile-walk-through-wrapper .steps-info-wrapper {
   max-width: 300px;
   overflow: hidden;
   margin: 0 auto;
-  flex-grow: 1;
   display: flex;
 }
 .mobile-walk-through-wrapper h2 {
   font-size: 15px;
   max-width: 200px;
   margin: 0 auto;
-  flex-grow: 1;
+  flex-grow: 2;
+  user-select: none;
+  padding-bottom: 25px;
+  box-sizing: border-box;
 }
 .mobile-walk-through-wrapper ul {
   white-space: nowrap;
   padding-left: 85px;
   display: flex;
   align-items: center;
+  height: 300px;
+  transition: 0.4s cubic-bezier(0.24, 0.4, 0.49, 0.8) transform;
 }
 .mobile-walk-through-wrapper li {
   display: inline-block;
@@ -573,6 +595,7 @@ input {
 }
 .mobile-walk-through-wrapper li svg {
   width: 80px;
+  transition: 0.4s cubic-bezier(0.24, 0.4, 0.49, 0.8) width;
 }
 .mobile-walk-through-wrapper li.active {
   margin: 0;
@@ -587,71 +610,93 @@ input {
   border-radius: 0;
   width: 100px;
 }
-.progress-indicator {
+.progress-indicator-wrapper {
+  flex-grow: 1;
+}
+.progress-indicator-wrapper .progress-indicator {
   width: 200px;
   height: 2px;
   background-color: rgba(255,255,255,0.5);
   margin: 0 auto;
 }
-.progress-indicator .progress-indicator-inner {
+.progress-indicator-wrapper .progress-indicator .progress-indicator-inner {
   width: 0;
   height: 100%;
   background-color: #fff;
   transition: 0.2s cubic-bezier(0, 0, 0.19, 0.91) all;
 }
 .tooltip {
-  width: 200px;
-  background: #f96332;
-  color: #fff;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 15px;
-  text-align: center;
-  padding: 30px;
   display: none;
 }
-.tooltip.active {
-  display: flex;
-}
-.tooltip .controlls {
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-}
-.tooltip .tip {
-  margin: 20px 0;
-}
-.tooltip a {
-  color: rgba(255,255,255,0.5);
-  transition: 0.2s linear all;
-}
-.tooltip a:hover {
-  color: #fff;
-}
-.tooltip .tooltip-icon {
-  width: 90px;
-  height: 90px;
-  background: #fff;
-  border-radius: 50%;
-}
-.tooltip .double-circle {
-  position: absolute;
-}
-.tooltip .double-circle span.circle {
-  border-radius: 50%;
-  background: rgba(255,255,255,0.3);
-  position: absolute;
-}
-.tooltip .double-circle span.circle:nth-child(1) {
-  width: 120px;
-  height: 120px;
-}
-.tooltip .double-circle span.circle:nth-child(2) {
-  width: 75px;
-  height: 75px;
+@media screen and (min-width: 600px) {
+  .tooltip {
+    width: 200px;
+    background: #f96332;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+    padding: 30px;
+    display: none;
+  }
+  .tooltip.active {
+    display: flex;
+  }
+  .tooltip.first .controlls {
+    justify-content: flex-end;
+  }
+  .tooltip .controlls {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+  }
+  .tooltip .tip {
+    margin: 20px 0;
+  }
+  .tooltip a {
+    color: rgba(255,255,255,0.5);
+    transition: 0.2s linear all;
+  }
+  .tooltip a:hover {
+    color: #fff;
+  }
+  .tooltip .tooltip-icon {
+    width: 90px;
+    height: 90px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    box-shadow: 0 0 50px rgba(0,0,0,0.2);
+  }
+  .tooltip .tooltip-icon svg {
+    fill: none;
+    stroke: #f96332;
+    width: 35px;
+    height: 35px;
+  }
+  .tooltip .double-circle {
+    position: absolute;
+  }
+  .tooltip .double-circle span.circle {
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    position: absolute;
+  }
+  .tooltip .double-circle span.circle:nth-child(1) {
+    width: 120px;
+    height: 120px;
+  }
+  .tooltip .double-circle span.circle:nth-child(2) {
+    width: 75px;
+    height: 75px;
+  }
 }
 .tooltip .double-circle span.circle {
   transform: scale(0);
@@ -662,19 +707,19 @@ input {
 .tooltip.active .double-circle span.circle:nth-child(2) {
   animation-delay: 0.2s;
 }
-.burger .tooltip {
-  top: 51px;
-  left: -2px;
+.burger-wrapper .tooltip {
+  top: 75px;
+  left: 15px;
 }
-.burger .tooltip .double-circle {
+.burger-wrapper .tooltip .double-circle {
   top: -94px;
   left: -33px;
 }
-.burger .tooltip .double-circle span.circle:nth-child(1) {
+.burger-wrapper .tooltip .double-circle span.circle:nth-child(1) {
   top: -7px;
   left: -11px;
 }
-.burger .tooltip .double-circle span.circle:nth-child(2) {
+.burger-wrapper .tooltip .double-circle span.circle:nth-child(2) {
   left: 12px;
   top: 20px;
 }
@@ -725,6 +770,38 @@ li.article:nth-child(2) .tooltip .double-circle span.circle:nth-child(2) {
 @keyframes pop {
   to {
     transform: scale(1);
+  }
+}
+@-moz-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 .app-wrapper {

@@ -143,7 +143,22 @@
         <path d="M6.18466 0L0 6.18466" transform="translate(41.1846 37) scale(-1 1)"  stroke-width="2" stroke-linecap="round"/>
       </g>
     </symbol>
+    <symbol id="menu" viewBox="0 0 50 50">
+      <title>menu</title>
+      <path d="M0 1H40" transform="translate(5 40)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M0 1H30" transform="translate(5 24)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M0 1H40" transform="translate(5 8)"  stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="swipe" viewBox="0 0 50 50">
+      <title>swipe</title>    
+      <path d="M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" transform="translate(29 16.1046)" stroke-width="2"/>
+      <path d="M0 1H15" transform="translate(6 24)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M14 14H0V0" transform="translate(13.8995 15.1046) rotate(45)"  stroke-width="2" stroke-linecap="round"/>
+    </symbol>
   </defs>
+
+
+
 
 
 
