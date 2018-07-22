@@ -468,9 +468,6 @@ input {
   border: none;
   outline: none;
 }
-.story {
-  padding-bottom: 50px;
-}
 .story-header {
   width: 100%;
   height: 50vh;
@@ -557,7 +554,7 @@ input {
 }
 .story-text-content p {
   font-size: 15px;
-  line-height: 22px;
+  line-height: 25px;
 }
 @media screen and (min-width: 500px) {
   .story-text-content p {
@@ -572,11 +569,8 @@ input {
   }
 }
 .story-quote {
-  margin: 20px 15px 0;
   position: relative;
-  padding-left: 21px;
   color: #f96332;
-  border-left: 2px solid #f96332;
 }
 @media screen and (min-width: 550px) {
   .story-quote {
@@ -604,9 +598,9 @@ input {
   }
 }
 .story-quote p.quote {
-  line-height: 22px;
+  line-height: 25px;
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 @media screen and (min-width: 500px) {
   .story-quote p.quote {
@@ -621,7 +615,7 @@ input {
   }
 }
 .story-quote h2 {
-  font-size: 12px;
+  font-size: 15px;
 }
 @media screen and (min-width: 500px) {
   .story-quote h2 {
@@ -635,35 +629,40 @@ input {
   }
 }
 .story-quote .photos {
-  display: none;
+  display: inline-block;
+  width: 100%;
+  height: 250px;
+  position: relative;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 30px 0 50px;
 }
-@media screen and (min-width: 700px) {
-  .story-quote .photos {
-    display: inline-block;
-  }
-  .story-quote .photos img {
-    position: absolute;
-    box-shadow: 0 0 50px rgba(0,0,0,0.2);
-  }
-  .story-quote .photos img:nth-child(1) {
-    width: 55%;
-    height: 300px;
-    object-fit: cover;
-    top: 0;
-    left: 10px;
-  }
-  .story-quote .photos img:nth-child(2) {
-    width: 80%;
-    left: 10%;
-    bottom: 0;
-    height: 385px;
-    object-fit: cover;
-  }
+.story-quote .photos img {
+  box-shadow: 0 0 50px rgba(0,0,0,0.2);
+  width: 65%;
+  height: 70%;
+  position: absolute;
+}
+.story-quote .photos img:nth-child(1) {
+  object-fit: cover;
+  top: 0;
+  right: 10px;
+  z-index: 2;
+}
+.story-quote .photos img:nth-child(2) {
+  left: 10px;
+  bottom: 0;
+  object-fit: cover;
 }
 @media screen and (min-width: 950px) {
-  .story-quote .photos {
+  .story-quote {
     display: none;
   }
+}
+.quote-text-wrapp {
+  border-left: 1px solid #f96332;
+  margin: 0 15px;
+  padding: 0 20px;
 }
 @media screen and (min-width: 700px) {
   .quote-text-wrapp {
@@ -676,6 +675,14 @@ input {
     display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+}
+@media screen and (min-width: 700px) and (min-width: 950px) {
+  .quote-text-wrapp {
+    width: initial;
+    padding: 60px 50px;
+    text-align: justify;
+    height: initial;
   }
 }
 ul.publish-infos {
@@ -860,13 +867,126 @@ ul.story-nav-controlls a svg {
     padding: 22px 20px 12px !important;
   }
 }
-@media screen and (min-width: 700px) and (min-width: 950px) {
-  .quote-text-wrapp {
-    width: initial;
-    padding: 60px 50px;
-    text-align: justify;
-    height: initial;
-  }
+h2.subhead {
+  font-size: 15px;
+  line-height: 25px;
+  margin: 45px 0 25px;
+  padding: 0 15px;
+}
+p.paragraph {
+  font-size: 15px;
+  line-height: 25px;
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+.video-holder {
+  width: 100%;
+  height: 300px;
+  margin: 50px 0;
+}
+.video-holder .video {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.video-holder .video img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.video-holder .video .play-button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.video-holder .video .play-button svg {
+  fill: #fff;
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  background: #f96332;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.story-gallery-wrapper ul.story-gallery {
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-57%);
+  padding: 50px 0;
+}
+.story-gallery-wrapper ul.story-gallery li.gallery-slide {
+  display: inline-block;
+  width: 70%;
+  height: 200px;
+  margin: 0 -2px;
+}
+.story-gallery-wrapper ul.story-gallery li.gallery-slide.active {
+  transform: scale(1.2);
+}
+.story-gallery-wrapper ul.story-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+.gallery-image-about {
+  text-align: center;
+  font-size: 13px;
+}
+.gallery-image-about a.image-photographer {
+  color: rgba(0,0,0,0.5);
+  margin: 10px 0 50px;
+  display: inline-block;
+  font-size: 14px;
+}
+ul.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+ul.pagination li.buble {
+  width: 13px;
+  height: 13px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+ul.pagination li.buble.active {
+  background-color: #f96332;
+}
+.next-story {
+  margin-top: 70px;
+  background-color: rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.next-story h4 {
+  color: rgba(0,0,0,0.3);
+  padding: 70px 0 50px;
+}
+.next-story h1 {
+  font-size: 20px;
+  padding: 0 20px;
+  text-align: center;
+  line-height: 30px;
+}
+.next-story svg.next {
+  fill: none;
+  stroke: #f96332;
+  width: 20px;
+  height: 40px;
+  cursor: pointer;
+  margin: 60px 0;
 }
 .app-wrapper {
   max-width: 100vw;

@@ -198,6 +198,17 @@
       <path d="M0.2 0.5H9.60213" transform="translate(3 12.5)"  stroke-linecap="square"/>
       <path d="M14 17L7.36154 0L0 17" transform="translate(1 1)"  stroke-linecap="round" stroke-linejoin="bevel"/>
     </symbol>
+    <symbol id="play" viewBox="0 0 17 24">
+      <title>play</title>    
+      <path d="M0 21V0L14.5 10.5L0 21Z" transform="translate(1 1.5)" />
+    </symbol>
+    <symbol id="hearth" viewBox="0 0 17 24">
+      <title>hearth</title>    
+      <path d="M7.04712 2.5506L7.50053 3.51969L7.95307 2.5502C8.59744 1.16975 9.96534 0.5 10.9615 0.5C11.9158 0.5 12.7986 0.811176 13.4375 1.39867C14.0694 1.97961 14.5 2.86445 14.5 4.09274C14.5 5.15301 14.0831 6.27639 13.4105 7.38972C12.7404 8.49885 11.8385 9.56183 10.9216 10.4914C10.0064 11.4192 9.0872 12.2032 8.39203 12.7551C8.04474 13.0309 7.75486 13.2475 7.55128 13.3941C7.52714 13.4114 7.50431 13.4278 7.48281 13.443C7.46486 13.4318 7.44601 13.42 7.42628 13.4075C7.2244 13.2798 6.93627 13.0894 6.59079 12.843C5.89911 12.3498 4.98385 11.6369 4.07247 10.7583C2.22609 8.97842 0.5 6.61898 0.5 4.09274C0.5 1.85294 2.19259 0.540898 4.03506 0.500174C5.09592 0.538857 6.41819 1.20637 7.04712 2.5506Z" transform="translate(0 0.733887)" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="arrow-forward" viewBox="0 0 23 44">
+      <title>arrow-forward</title>    
+      <path d="M0 0L20.275 19.3096C20.6753 19.6908 20.6904 20.3244 20.3087 20.7242L0 42" transform="translate(1 1)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
   </defs>
-
 
