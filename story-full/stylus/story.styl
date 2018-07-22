@@ -1,0 +1,273 @@
+@import 'mixins.styl'
+@import 'vars.styl'
+
+.story 
+  padding-bottom 50px
+
+.story-header
+  width 100%
+  height 50vh
+  min-height 300px
+  max-height 500px
+  backgroundImage('images/img3.png')
+  background-size cover
+  color white
+  position relative
+  padding 20px 15px
+  box-sizing border-box
+  display flex
+  align-items flex-end
+  @media screen and (min-width 500px)
+    padding 30px 20px
+  @media screen and (min-width 700px)
+    min-height 500px
+    max-height 600px
+  @media screen and (min-width 950px)
+    min-height 600px
+    max-height 800px
+    padding 45px 15px
+  .story-header-overlay
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+    height 30%
+    background linear-gradient(#ff000000,#0000006b)
+  h2 
+    position relative
+    z-index 2
+    font-size 18px
+    @media screen and (min-width 500px)
+      font-size 25px
+    @media screen and (min-width 700px)
+      font-size 35px
+      max-width 700px
+    @media screen and (min-width 700px)
+      max-width initial
+
+.story-text-content
+  padding 0 15px
+  @media screen and (min-width 550px)
+    max-width 500px
+    margin 20px auto 0
+  @media screen and (min-width 700px)
+    max-width 900px
+  @media screen and (min-width 950px)
+    flex-basis 50%
+    margin 0
+    padding 0 40px 0 15px
+  p 
+    font-size 15px
+    line-height 22px
+    @media screen and (min-width 500px)
+      font-size 17px
+      line-height 25px
+    @media screen and (min-width: 700px)
+      font-size 20px
+      line-height 35px
+
+.story-quote
+  margin 20px 15px 0
+  position relative
+  padding-left 21px
+  color orange
+  border-left 2px solid orange
+  @media screen and (min-width 550px)
+    max-width 500px
+    margin 20px auto 0
+  @media screen and (min-width 700px)
+    max-width initial 
+    width 700px
+    margin 50px auto 0
+    display flex
+    justify-content flex-end
+    padding 25px 20px 325px
+    box-sizing border-box
+    border-left none
+  @media screen and (min-width 950px)
+    margin 0
+    padding 0 15px 0 40px
+    flex-basis 50%
+  p.quote 
+    line-height 22px
+    font-size 15px
+    margin-bottom 10px
+    @media screen and (min-width 500px)
+      font-size 17px
+      line-height 25px
+    @media screen and (min-width 700px)
+      font-size 16px
+      line-height 30px
+  h2 
+    font-size 12px
+    @media screen and (min-width 500px)
+      font-size 15px
+    @media screen and (min-width 950px)
+      font-size 20px
+      margin-top 10px
+  .photos
+    display none
+    @media screen and (min-width 700px)
+      display inline-block
+      img 
+        position absolute
+        box-shadow 0 0 50px rgba(#000,.2)
+        &:nth-child(1)
+          width 55%
+          height 300px
+          object-fit cover
+          top 0
+          left 10px
+        &:nth-child(2)
+          width 80%
+          left 10%
+          bottom 0
+          height 385px
+          object-fit cover
+    @media screen and (min-width 950px)
+      display none
+
+@media screen and (min-width 700px)
+  .quote-text-wrapp
+    width 350px
+    border 2px solid orange 
+    padding 0px 27px 42px 81px
+    box-sizing border-box
+    z-index 2
+    height 300px
+    display flex
+    justify-content center
+    flex-direction column
+    @media screen and (min-width 950px)
+      width initial
+      padding 60px 50px
+      text-align justify
+      height initial
+ul.publish-infos
+  padding 15px 15px 30px
+  box-sizing border-box
+  display flex
+  align-items center
+  font-size 12px
+  @media screen and (min-width 950px)
+    padding 35px 15px 40px
+    font-size 12px !important
+  svg 
+    fill none
+    stroke black
+    width 20px
+    height 20px
+  @media screen and (min-width 600px)
+    font-size 10px
+  li.source,
+  li.time
+    margin-right 10px
+    flexCenter()
+  li.category
+    flex-grow 1
+    text-align right
+    a
+      position relative
+      &:after
+        content ''
+        width 100%
+        height 1px
+        position absolute
+        background currentColor
+        opacity .5
+        left 0
+        bottom -5px
+
+ul.story-header-buttons
+  display none
+  @media screen and (min-width 950px)
+    z-index 10
+    position relative
+    width 180px
+    display flex
+    align-items flex-end
+    padding-left 50px
+    justify-content space-between
+    a
+      width 40px
+      height 40px
+      background-color orange 
+      flexCenter()
+      border-radius 50%
+      svg 
+        width 20px
+        height 20px
+        stroke #ffffff
+        fill none
+
+
+@media screen and (min-width 950px)
+  .story-content.max
+    display flex
+  .story-header-content
+    display flex
+
+
+// NAVIGATION STUFF
+
+.navigation-wrapper,
+.burger-wrapper,
+.logo,
+.nav-bar-right
+  display none
+
+.nav-bar-right
+  @media screen and (min-width 700px)
+      flexCenter()
+      li
+        flexCenter()
+        margin-left 15px
+        @media screen and (min-width 950px)
+          margin-left 25px
+        a
+          flexCenter()
+
+
+ul.nav-bar-right li.nav-bookmark
+  display none
+  @media screen and (min-width 950px)
+    display flex
+
+@media screen and (min-width 700px)
+  .logo
+    display inline-block
+    position absolute
+    width 30px
+    height 30px
+    left calc(50% - 15px)
+
+@media screen and (min-width 950px)
+  .burger-wrapper,
+  .navigation-wrapper
+    display flex
+
+ul.story-nav-controlls
+  width 100%
+  flexCenter(row , space-between)
+  @media screen and (min-width 700px)
+    width 180px
+    .aa
+      display none
+  a
+    flexCenter()
+    width 35px
+    height 35px
+    svg 
+      width 30px
+      height 30px
+  @media screen and (min-width 950px)
+    display none
+
+.nav-bar-wrapper 
+  padding 20px 10px 15px !important
+  @media screen and (min-width 950px)
+    padding 22px 20px 12px !important
+/*
+.nav-bar-wrapper
+25px 20px 10px
+*/
