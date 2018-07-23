@@ -60,8 +60,8 @@
       font-size 17px
       line-height 25px
     @media screen and (min-width: 700px)
-      font-size 20px
-      line-height 35px
+      font-size 18px
+      line-height 31px
 
 .story-quote
   position relative
@@ -72,12 +72,12 @@
   @media screen and (min-width 700px)
     max-width initial 
     width 700px
-    margin 50px auto 0
-    display flex
-    justify-content flex-end
-    padding 25px 20px 325px
+    margin 50px auto 100px
     box-sizing border-box
     border-left none
+    position relative
+    height 550px
+    padding 0 20px
   @media screen and (min-width 950px)
     margin 0
     padding 0 15px 0 40px
@@ -107,34 +107,54 @@
     padding 0 10px
     box-sizing border-box
     margin 30px 0 50px
+    @media screen and (min-width 500px)
+      height 300px
+      margin 40px 0 60px
+    @media screen and (min-width 700px)
+      width 100%
+      height 100%
+      margin 0
     img 
       box-shadow 0 0 50px rgba(#000,.2)
       width 65%
       height 70%
       position absolute
+
       &:nth-child(1)
         object-fit cover
         top 0
         right 10px
         z-index 2
+        @media screen and (min-width 700px)
+          width 55%
+          left 0
+          top 0
+          height 55%
       &:nth-child(2)
         left 10px
         bottom 0
         object-fit cover
-  @media screen and (min-width 950px)
-    display none
-
+        @media screen and (min-width 700px)
+          z-index 10
+          width 80%
+          height 57%
+          right 14%
+          bottom -5%
+          left unset
 
 .quote-text-wrapp
   border-left 1px solid orange
   margin 0 15px
   padding 0 20px
   @media screen and (min-width 700px)
+      position absolute
+      top 25px
+      z-index 10
+      right 15px
       width 350px
       border 2px solid orange 
       padding 0px 27px 42px 81px
       box-sizing border-box
-      z-index 2
       height 300px
       display flex
       justify-content center
@@ -204,8 +224,6 @@ ul.story-header-buttons
 
 
 @media screen and (min-width 950px)
-  .story-content.max
-    display flex
   .story-header-content
     display flex
 
@@ -278,17 +296,43 @@ h2.subhead
   line-height 25px
   margin 45px 0 25px
   padding 0 15px
+  @media screen and (min-width 550px) and (max-width 700px)
+    max-width 500px
+    margin 60px auto 30px
+    font-size 20px
+    line-height 30px
+  @media screen and (min-width 700px)
+    max-width 800px
+    font-size 25px
+    line-height 30px
+    margin 68px auto 50px
+    padding 0 15px
 
 p.paragraph
   font-size 15px
   line-height 25px
   padding 0 15px
   margin-bottom 30px
+  @media screen and (min-width 550px) and (max-width 700px)
+    max-width 500px
+    margin 30px auto
+    text-align justify
+  @media screen and (min-width 700px)
+    max-width 800px
+    font-size 16px
+    line-height 27px
+    margin 40px auto
 
 .video-holder 
   width 100%
   height 300px
   margin 50px 0
+  @media screen and (min-width 600px)
+    height 400px
+  @media screen and (min-width 700px)
+    height 450px
+  @media screen and (min-width 850px)
+    height 500px
   .video 
     width 100%
     height 100%
@@ -320,11 +364,19 @@ p.paragraph
   justify-content center
   transform translateX(-57%)
   padding 50px 0
+  @media screen and (min-width 600px)
+    padding 65px 0
   li.gallery-slide 
     display inline-block
     width 70%
     height 200px
     margin 0 -2px
+    @media screen and (min-width 600px)
+      height 250px
+    @media screen and (min-width 700px)
+      height 300px
+    @media screen and (min-width 850px)
+      height 350px
     &.active
       transform scale(1.2)
   img 
@@ -363,9 +415,19 @@ ul.pagination
   flex-direction column
   justify-content center
   align-items center
+  @media screen and (min-width 700px)
+    flex-direction row
+    padding 40px 0
+    margin-top 100px
+    h1 
+      display none
+  @media screen and (min-width 900px)
+    display none
   h4
     color rgba(#000 , .3)
     padding 70px 0 50px
+    @media screen and (min-width 700px)
+      padding 0 20px
   h1 
     font-size 20px
     padding 0 20px
@@ -378,3 +440,11 @@ ul.pagination
     height 40px
     cursor pointer
     margin 60px 0
+    @media screen and (min-width 700px)
+      margin 0
+
+.comments-wrapper
+  display none
+  @media screen and (min-width 900px)
+    display block
+    margin-top 100px
