@@ -6,6 +6,16 @@
   left: 0;
   background-color: #e0592d;
   color: #fff;
+  z-index: 3;
+  transition: 0.3s cubic-bezier(0.13, 0.71, 0.18, 0.9) transform;
+  transform: translateY(-120%);
+}
+.fonts-settings-wrapper svg {
+  stroke: #fff;
+  fill: none;
+}
+.fonts-settings-wrapper.down {
+  transform: translateY(0%);
 }
 @media screen and (min-width: 950px) {
   .fonts-settings-wrapper {
@@ -142,6 +152,7 @@ ul.fonts-settings li.luminosity .active svg {
 }
 .font-size .small-size svg {
   width: 20px;
+  height: 20px;
 }
 .font-size .big-size svg {
   width: 35px;

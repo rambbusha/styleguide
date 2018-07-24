@@ -1,6 +1,9 @@
 @import 'mixins.styl'
 @import 'vars.styl'
 
+.story-content
+  flexCenter(column)
+
 .story-header
   width 100%
   height 50vh
@@ -42,7 +45,7 @@
     @media screen and (min-width 700px)
       max-width initial
 
-.story-text-content
+.story-main-idea-text
   padding 0 15px
   @media screen and (min-width 550px)
     max-width 500px
@@ -50,9 +53,12 @@
   @media screen and (min-width 700px)
     max-width 900px
   @media screen and (min-width 950px)
-    flex-basis 50%
-    margin 0
-    padding 0 40px 0 15px
+    max-width 1000px
+    position relative
+    padding 50px 0 80px
+    margin 0 auto 80px
+    &:after
+      orangeSmallLine()
   p 
     font-size 15px
     line-height 25px
@@ -79,9 +85,11 @@
     height 550px
     padding 0 20px
   @media screen and (min-width 950px)
+    fix()
+    padding 0
+    max-width 1200px
+    height unset
     margin 0
-    padding 0 15px 0 40px
-    flex-basis 50%
   p.quote 
     line-height 25px
     font-size 15px
@@ -114,12 +122,13 @@
       width 100%
       height 100%
       margin 0
+    @media screen and (min-width 950px)
+      padding 0
     img 
       box-shadow 0 0 50px rgba(#000,.2)
       width 65%
       height 70%
       position absolute
-
       &:nth-child(1)
         object-fit cover
         top 0
@@ -130,6 +139,10 @@
           left 0
           top 0
           height 55%
+        @media screen and (min-width 950px)
+          width 60%
+          height 35vw
+          position relative
       &:nth-child(2)
         left 10px
         bottom 0
@@ -141,6 +154,14 @@
           right 14%
           bottom -5%
           left unset
+        @media screen and (min-width 950px)
+          width 60%
+          height 35vw
+          float right 
+          transform translateY(-45%)
+          position relative
+          left unset 
+          right unset
 
 .quote-text-wrapp
   border-left 1px solid orange
@@ -224,9 +245,57 @@ ul.story-header-buttons
 
 
 @media screen and (min-width 950px)
+  .quote-text-outer-wrapp
+    width 50%
+    flexCenter(row,flex-end)
+    top 32vw
+    position absolute
+    .quote-text-wrapp
+      position relative
+      top unset
+      width 55%
+      max-width 250px
+      box-sizing content-box
+      height 300px
+      padding 5vw 12vw 3vw 5vw
   .story-header-content
     display flex
-
+    max-width 1000px
+    margin 0 auto
+  .story-body
+    max-width 1200px
+    clear both
+    width 100%
+    position relative
+    float left
+    margin-top -11%
+    margin-bottom 100px
+    padding-bottom 30px
+    &:after
+      orangeSmallLine()
+    .video-holder
+      position absolute
+      width 45%
+      height 100%
+      margin 0
+      flexCenter()
+      .video
+        height 350px
+    p.paragraph
+    .subhead
+      float right
+      width 50%
+      margin 0
+      padding 0
+      clear both
+      padding-right 10%
+      box-sizing border-box
+      margin-bottom 30px
+      padding-left 5%
+    p.paragraph
+      margin 10px 0
+      font-size 15px
+      line-height 25px
 
 // NAVIGATION STUFF
 
@@ -360,10 +429,12 @@ p.paragraph
 /* STORY FULL  GALLERY*/    
 .story-gallery-wrapper ul.story-gallery
   white-space nowrap
+  clear both
   align-items center
   justify-content center
   transform translateX(-57%)
   padding 50px 0
+  transition .4s .3s linear transform
   @media screen and (min-width 600px)
     padding 65px 0
   li.gallery-slide 
@@ -371,12 +442,17 @@ p.paragraph
     width 70%
     height 200px
     margin 0 -2px
+    transition .2s linear transform
     @media screen and (min-width 600px)
       height 250px
     @media screen and (min-width 700px)
       height 300px
     @media screen and (min-width 850px)
       height 350px
+    @media screen and (min-width 950px)
+      height 400px
+    @media screen and (min-width 1050px)
+      height 450px
     &.active
       transform scale(1.2)
   img 
@@ -405,16 +481,18 @@ ul.pagination
     border-radius 50%
     margin 0 5px
     cursor pointer
+    transition .2s linear background
     &.active
       background-color orange
 
 .next-story 
   margin-top 70px
-  background-color rgba(0,0,0,.1)
+  background-color rgba(160,160,160,.1)
   display flex
   flex-direction column
   justify-content center
   align-items center
+  width 100%
   @media screen and (min-width 700px)
     flex-direction row
     padding 40px 0
@@ -448,3 +526,40 @@ ul.pagination
   @media screen and (min-width 900px)
     display block
     margin-top 100px
+    width 100%
+
+.footer-wrapper
+  display none
+  @media screen and (min-width 900px)
+    display block
+    width 100%
+    background-color rgba(160,160,160,0.1)
+    margin-top 50px
+    .footer
+      max-width 1000px
+      margin 0 auto
+      padding 50px 10px
+      flexCenter(row , space-between)
+      font-size 15px
+      color rgba(black , .4)
+      ul.pages-links
+        flexCenter()
+        font-weight bold
+        color rgba(black , .3)
+        li
+          margin 0 10px
+      .footer-right
+        flexCenter()
+        ul.social-media
+          display flex
+          margin-right 30px
+          li
+            margin 0 10px
+          a
+            display block
+      svg.social-icon 
+        width 25px
+        height 25px
+        fill rgba(black , .2)
+        &:hover
+          fill rgba(black , .5)

@@ -1,3 +1,5 @@
+@import 'vars.styl';
+
 flexCenter(direction=row , justifyContent = center)
   display flex
   align-items center
@@ -36,3 +38,17 @@ arrow(to , width , arrowColor , toLeft = false)
   else 
     right -15px
   top calc(50% - 7.5px)
+
+orangeSmallLine()
+  content ''
+  width 20px
+  height 2px
+  background-color orange
+  position absolute
+  bottom 0
+  left calc(50% - 10px)
+
+fix()
+  clear both
+  width 100%
+  float left
