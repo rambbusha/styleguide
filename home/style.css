@@ -147,32 +147,32 @@
   background-size: cover;
   background-position: right;
 }
-ul.articles-more-infos {
+ul.publish-infos {
   display: flex;
   align-items: center;
   font-size: 12px;
 }
 @media screen and (min-width: 600px) {
-  ul.articles-more-infos {
+  ul.publish-infos {
     font-size: 10px;
   }
 }
-ul.articles-more-infos li.source,
-ul.articles-more-infos li.time {
+ul.publish-infos li.source,
+ul.publish-infos li.time {
   margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
-ul.articles-more-infos li.category {
+ul.publish-infos li.category {
   flex-grow: 1;
   text-align: right;
 }
-ul.articles-more-infos li.category a {
+ul.publish-infos li.category a {
   position: relative;
 }
-ul.articles-more-infos li.category a:after {
+ul.publish-infos li.category a:after {
   content: '';
   width: 100%;
   height: 1px;
