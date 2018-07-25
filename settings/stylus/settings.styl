@@ -1,0 +1,267 @@
+@import 'mixins.styl'
+@import 'vars.styl'
+
+inputHeight = 55px
+inputMargin = 7px
+
+svg 
+  fill none !important
+
+.settings
+  min-height 100vh
+  background-color darkorange
+  padding-top 70px
+  box-sizing border-box
+  display flex
+  flex-direction column
+  @media screen and (min-width 950px)
+    position fixed
+    right 0
+    top 60px
+    height calc(100vh - 60px)
+    overflow-y scroll
+    width 45vw
+    padding 0
+
+form
+  position relative
+  z-index 3
+  width 90%
+  margin 0 auto
+  max-width 350px
+  min-width 250px
+  flexCenter(column)
+  margin-bottom 35px
+  input 
+    color #fff
+    font-size 15px
+  input[type="submit"]
+    width 100%
+    height inputHeight
+    background rgba(#fff , 0)
+    border-radius 50px
+    border 2px solid rgba(#fff , .2)
+    cursor pointer
+    margin-top 40px
+    &:hover
+      background rgba(#fff , .1)
+  .input-wrapper
+    width 100%
+    height inputHeight
+    margin inputMargin 0
+    position relative
+    svg.icon
+      stroke rgba(#fff , .5)
+      fill none
+      top 0
+      left 15px
+      width 30px
+      height 100%
+      position absolute
+    input 
+      padding 0 20px 0 60px
+      box-sizing border-box
+      width 100%
+      height 100%
+      background rgba(#fff , .1)
+      border-radius 50px
+    ::placeholder
+      color #fff
+
+.avatar-upload-download
+  display flex
+  justify-content space-between
+  padding 10px 15px 30px
+  box-sizing border-box
+  max-width 350px
+  margin 0 auto
+  width 100%
+  @media screen and (min-width 950px)
+    padding 30px 0
+    justify-content center
+  img
+  .up-down-icon
+    width 60px
+    height 60px
+    border-radius 50%
+    @media screen and (min-width 550px)
+      width 100px
+      height 100px
+      margin-top 40px
+    @media screen and (min-width 950px)
+      width 120px
+      height 120px
+  .up-down-icon
+    background-color rgba(white , .1)
+    flexCenter()
+    svg 
+      width 30px
+      height 30px
+
+h2.section-title 
+  color white
+  text-align center
+  padding 30px 0
+  @media screen and (min-width 550px)
+    display none
+
+.email-notification
+  flex-grow 1
+  background-color white
+  padding 20px 15px 40px
+  font-size 14px
+  position relative
+  box-sizing border-box
+  @media screen and (min-width 950px)
+    background-color unset
+    color white
+  h4
+    color darkorange 
+    padding-bottom 10px
+    max-width 350px
+    margin 0 auto
+    @media screen and (min-width 950px)
+      color rgba(white , .5)
+  .email-notification-settings 
+    max-width 350px
+    margin 0 auto
+    li
+      flexCenter(row , space-between)
+      width 100%
+      margin 20px 0
+
+.search
+  display none
+  @media screen and (min-width 550px)
+    display flex
+
+.input-wrapper.profession
+  display none
+  @media screen and (min-width 550px)
+    display block
+
+
+.settings-inner
+  display flex
+  flex-grow 1
+  flex-direction column
+  @media screen and (min-width 950px)
+    padding-bottom 60px
+    display block
+
+.settings-footer
+  display none
+  @media screen and (min-width 550px)
+    display block
+    text-align center
+    color rgba(#A3A3A3,1)
+    background white
+    background linear-gradient(transparent,white)
+    position absolute
+    bottom 0
+    right 0
+    flexCenter()
+    width 100%
+    height 45px
+    z-index 10
+    @media screen and (min-width 950px)
+      background orange
+      color white
+      position fixed
+      width 45vw
+      height 60px
+      background linear-gradient(transparent,orange)
+      .settings-footer-inner
+        max-width 450px
+        padding 0 20px
+        margin 0 auto
+        flexCenter(row,space-between)
+        width 100%
+        height 100%
+
+    svg 
+      display none
+      cursor pointer
+      &:hover
+        opacity 1
+      @media screen and (min-width 950px)
+        display block
+        stroke white
+        opacity .8
+        width 30px
+        height 30px
+
+@media screen and (min-width 950px)
+  .page-holder
+    height 100vh
+    width 100vw
+    transform translateX(-45vw)
+    background #D3CCE3
+    background -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3)
+    background linear-gradient(to right, #E9E4F0, #D3CCE3)
+  li.upload
+    transform translateX(15px)
+  li.download
+    transform translateX(-15px)
+  .nav-bar-right .log-out
+    display none
+
+/* Checkboxes */
+.switch 
+  position relative
+  display inline-block
+  width 50px
+  height 25px
+
+.switch input 
+  display:none
+
+.swtich-slider
+  position absolute
+  cursor pointer
+  top 0
+  left 0
+  right 0
+  bottom 0
+  background-color rgba(#E5E5E5,1)
+  -webkit-transition .4s
+  transition .4s
+  border-radius 50px
+  @media screen and (min-width 950px)
+    background-color rgba(black , .1)
+
+.swtich-slider:before 
+  position absolute
+  content ""
+  box-shadow 2px 8px 15px rgba(0, 0, 0, 0.2)
+  height 25px
+  width 25px
+  left 0px
+  bottom 0px
+  background-color rgba(#B7B7B7,1)
+  border-radius 50%
+  -webkit-transition .4s
+  transition .4s
+  @media screen and (min-width 950px)
+    background-color rgba(black , .2)
+
+input:checked + .swtich-slider:before
+  background-color orange
+  left 25px
+  @media screen and (min-width 950px)
+    background-color white
+/* Scroll-bar */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color rgba(black,.1)
+    border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color rgba(black,.2)
+}

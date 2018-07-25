@@ -1,0 +1,85 @@
+@import 'vars.styl'
+@import 'mixins.styl'
+
+.navigation-bg
+  width 120%
+  position absolute
+  top -10%
+  left -10%
+  height 120%
+  background-image url(images/bg.png)
+  background-size cover
+  background-position left
+  filter blur(10px)
+  opacity .2
+
+
+.navigation-wrapper
+  position fixed
+  top 0
+  left -270px
+  overflow hidden
+  background orangeBlackGrad
+  height 100vh
+  width 270px
+  display none
+  flex-direction column
+  z-index 100
+  transition navigationTransition linear left
+  @media screen and (min-width 10px)
+     display flex
+  &.translated
+    left 0
+  svg.navigation-icon
+    width 25px
+    height 25px
+  .navigation
+    flex-grow 1
+    padding-top 20px
+  .navigation,
+  .navigation-profile
+    z-index 3
+    position relative
+  svg.navigation-icon
+    fill none 
+    stroke rgba(#fff , .7)
+    flex-basis 80px
+  li.navigation-link
+    margin 15px 0
+    h2
+      flex-grow 2
+    a
+      color #fff
+      font-size 10px
+      flexCenter()
+      &:hover > svg 
+        stroke #fff
+  .navigation-profile
+    flexCenter(row,space-around)
+    padding-bottom 20px
+    &:after
+      afterLine()
+    a
+      color #ffffff
+      font-weight bold
+      font-size 15px
+      margin-bottom 5px
+      display inline-block
+    p
+      color rgba(#fff , .5)
+      font-size 13px
+    .navigation-profile-avatar
+      width 40px
+      height 40px
+      border-radius 50%
+      background-color white
+  li.big-screen
+    display none
+    @media screen and (min-width 750px)
+      display block
+      &.line-over
+        position relative
+        margin-top 50px
+        &:after
+          afterLine()
+    
