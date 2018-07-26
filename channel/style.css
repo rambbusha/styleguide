@@ -83,6 +83,10 @@ img {
   padding: 10px 30px;
   font-size: 15px;
   font-weight: bold;
+  cursor: pointer;
+}
+.channel-header .follow-button:hover {
+  transform: translateY(-2px);
 }
 .channel-header h4 {
   font-size: 15px;

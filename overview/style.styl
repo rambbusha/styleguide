@@ -4,7 +4,13 @@
   max-width 100vw
   overflow hidden
 
+.overview
+  max-width 1100px
+  margin 0 auto
+  overflow hidden
+
 .wrapper
+  background-color darkorange
   transition navigationTransition linear transform
   .black-overlay 
       fullAbsolute()
@@ -15,3 +21,12 @@
       transform translateX(270px)
       .black-overlay
         display block
+
+li.chart
+  transition .3s linear all
+
+li.chart.active
+  transition-delay 1s
+
+ul.charts
+  transition .5s .5s linear all

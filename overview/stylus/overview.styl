@@ -51,16 +51,18 @@ ul.charts
 			max-width unset 
 			margin 0
 			white-space nowrap
-			transform translateX(-25%)		
-  .chart-bar-inner
-    position absolute
-    top 0
-    left 0
-    height 100%
-    background white
-    box-shadow 0 2px 13px rgba(0, 0, 0, 0.7)
-    transition 2.5s cubic-bezier(0, 0, 0, 1.38) width
-    width 0%
+			transform translateX(-25%)	
+				
+.chart-bar-inner,
+.chart-big-bar-inner
+	position absolute
+	top 0
+	left 0
+	height 100%
+	background white
+	box-shadow 0 2px 13px rgba(0, 0, 0, 0.7)
+	transition 2.5s cubic-bezier(0, 0, 0, 1.38) width
+	width 0%
 
 .chart-text
 	flexCenter(row , space-between)
@@ -160,9 +162,13 @@ ul.charts
 			display inline-block
 			fill none 
 			stroke white
+			opacity .8
 			width 25px
 			cursor pointer
 			height 25px
+			&:hover
+				transform scale(1.2)
+				opacity 1
 		.top
 			padding 50px 50px 70px
 			display flex 
