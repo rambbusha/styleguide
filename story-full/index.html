@@ -191,12 +191,12 @@
       <div class='fonts-settings-wrapper'>
         <ul class='fonts-settings'>
           <li class='luminosity'>
-            <div class='sun active'>
+            <div data-for='sun' class='sun active'>
               <svg class="luminosity-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <use xlink:href="#sun"></use>
               </svg>
             </div>
-            <div class='moon'>
+            <div data-for='moon' class='moon'>
               <svg class="luminosity-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <use xlink:href="#moon"></use>
               </svg>
@@ -204,7 +204,23 @@
           </li>
           <li class='typeface'>
             <p>CHOOSE TYPEFACE</p>
-            <p>SANS SERIF ></p>
+            <div class='select-typeface'>
+              <svg data-to='-1' class="typeface-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="#arrow-back"></use>
+              </svg>
+              <div class='typfaces-list-wrapper'>
+                <ul class='typfaces-list'>
+                  <li data-type='Montserrat'>MONTSERRAT</li>
+                  <li data-type='sans-serif'>SANS-SERIF</li>
+                  <li data-type='cursive'>CURSIVE</li>
+                  <li data-type='fantasy'>FANTASY</li>
+                  <li data-type='serif'>SERIF</li>
+                </ul>
+              </div>
+              <svg data-to='1' class="active typeface-arrow" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href="#arrow-forward"></use>
+              </svg>
+            </div>
           </li>
           <li class='font-size'>
             <div class='small-size'>

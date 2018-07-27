@@ -14,6 +14,7 @@
   transform translateY(-120%)
   svg
     stroke white
+    fill none
   &.down
     transform translateY(0%)
   @media screen and (min-width 950px)
@@ -93,6 +94,7 @@ ul.fonts-settings
         background-color rgba(white,.3)
         padding 20px
         border-radius 50%
+        transition .2s linear all
         @media screen and (min-width 650px) and (max-width 950px)
           width 35px
           height 35px
@@ -111,6 +113,26 @@ ul.fonts-settings
   height 35px
 
 
+.select-typeface
+  flexCenter()
+  svg.typeface-arrow
+    width 30px
+    height 30px
+    opacity .5
+    &.active:hover
+      cursor pointer
+      opacity 1
+.typfaces-list-wrapper
+  width 150px
+  overflow hidden
+  ul.typfaces-list 
+    white-space nowrap
+    transition .3s cubic-bezier(0, 0.53, 0.2, 0.87) transform
+    li
+      padding 0
+      display inline-block
+      width 150px
+      text-align center
 
 
 .range-holder

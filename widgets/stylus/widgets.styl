@@ -1,0 +1,45 @@
+
+.widgets
+  width 100%
+  min-height 100vh
+  background rgba(black,.2)
+  .header
+    color white
+    background-color darkorange 
+    padding 40px 0 35px
+    text-align center
+
+.temperature-wrapper
+  background-color rgba(#FFB235,1)
+  color white
+  .weather-icon
+    fill none 
+    stroke white
+    width 50px
+    height 50px
+  .temperature-now
+    padding 0 15px
+    flexCenter(row,space-between)
+    .text
+      font-size 17px
+      h6.city
+        font-size 16px
+        opacity .5
+  .degree-now
+    position relative
+    padding-right 10px
+    h1 
+      font-size 120px
+      line-height 100px
+    span
+      font-weight bold
+      font-size 30px
+      top -10px
+      right -5px
+      position absolute
+
+svg.weather-chart
+  fill none 
+  stroke red
+  stroke-width 3
+  height 300px
