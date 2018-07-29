@@ -212,7 +212,21 @@
       <path d="M51.8109 59.8399L51.7037 59.8289L51.5959 59.8295L21.25 60C21.2481 60 21.2462 60 21.2443 60C10.6547 59.9969 2 51.2178 2 40.3C2 29.3832 10.658 20.6 21.25 20.6C22.889 20.6 24.481 20.8329 26.0286 21.2408L27.7395 21.6917L28.3956 20.0484C32.631 9.44058 42.7996 2 54.6429 2C70.2651 2 83 14.9465 83 31C83 47.0594 70.2654 60 54.6429 60C53.7043 60 52.7645 59.9376 51.8109 59.8399Z" transform="translate(0.400024 4)"  stroke-width="4"/>
       <path d="M3.70458 29.9616L37.2769 9.76175C33.6743 5.03472 28.023 2 21.6739 2C10.8245 2 2 10.876 2 21.8615C2 24.7507 2.60987 27.4907 3.70458 29.9616Z" transform="translate(3.40002)"  stroke-width="4"/>
     </symbol>
+    <symbol id="long-arrow-left" viewBox="0 0 62 34">
+      <title>long-arrow-left</title>
+      <path d="M0 1H56" transform="translate(4 16)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 30L0 15L16 0" transform="translate(2 2)"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="long-arrow-right" viewBox="0 0 62 34">
+      <title>long-arrow-right</title>
+      <path d="M0 1H56" transform="translate(58 16) scale(-1 1)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M16 30L0 15L16 0" transform="translate(60 2) scale(-1 1)"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
   </defs>
+
+
+
+
 
 
 

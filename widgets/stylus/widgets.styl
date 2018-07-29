@@ -1,17 +1,30 @@
+@import 'mixins.styl'
+@import 'vars.styl'
+
+red = #FF3636
+green = #63DA38
+
+
 
 .widgets
   width 100%
   min-height 100vh
   background rgba(black,.2)
+  min-height 100vh
+  display flex
+  flex-direction column
   .header
     color white
     background-color darkorange 
     padding 40px 0 35px
     text-align center
+    @media screen and (min-width 550px)
+      display none
 
 .temperature-wrapper
   background-color rgba(#FFB235,1)
   color white
+  padding 20px 0
   .weather-icon
     fill none 
     stroke white
@@ -27,19 +40,196 @@
         opacity .5
   .degree-now
     position relative
-    padding-right 10px
+    padding-right 5px
     h1 
       font-size 120px
       line-height 100px
     span
       font-weight bold
       font-size 30px
-      top -10px
+      top -40px
       right -5px
       position absolute
 
+.stocks-widgets
+  display flex
+  flex-grow 1
+  background white
+  .stock
+    border-right 1px solid rgba(black , .3)
+    flex-basis 50%
+    padding 20px 0
+    .stock-header
+      flexCenter(row,space-between)
+      padding 0 10px
+      font-size 20px
+    .bubles-options
+      width 20px
+      height 20px
+      position relative
+      flexCenter(column,space-between)
+      cursor pointer
+      opacity .5
+      &:hover
+        opacity .8
+      span
+        width 5px
+        height 5px
+        border 2px solid rgba(black , 1)
+        border-radius 50px
+        position relative
+    .proffit
+      padding 15px 10px 0
+      font-size 19px
+      &.up
+        color green
+      &.down
+        color red
+    .total-sales
+      padding 0 10px 
+      opacity .5
+      font-size 14px
+    .details-button
+      flexCenter()
+      h3
+        color orange 
+        border 1px solid rgba(black,.2)
+        cursor pointer
+        border-radius 50px
+        font-size 15px
+        padding 8px 25px
+        &:hover
+          color white
+          border 1px solid orange 
+          background-color orange
+          transform translateY(-2px)
+
+.svg-fake
+  height 100px
+
 svg.weather-chart
   fill none 
-  stroke red
-  stroke-width 3
-  height 300px
+  g
+   stroke black
+   stroke-width 5
+
+
+.big-article
+  display none
+  @media screen and (min-width 550px)
+    display flex
+    color white
+    padding 0 20px
+    display flex
+    height 65vw
+    position relative
+    max-height 400px
+    background url("images/img1.png")
+    background-size cover
+    .article-bg
+      fullAbsolute()
+      background linear-gradient(#ff000000 63%,rgba(0, 0, 0, 0.5215686274509804))
+    .article-infos
+      padding 20px 0
+      display flex
+      flex-direction column
+      justify-content flex-end
+      z-index 10
+      width 100%
+    h2.article-title
+      margin-bottom 20px
+      line-height 30px
+      font-size 30px
+      max-width 550px
+    ul.publish-infos
+      display flex
+      font-size 13px
+      opacity .5
+      li 
+        display flex
+        align-items center
+        margin-right 20px
+      li.category
+        flex-grow 1
+        justify-content flex-end
+        a
+          display block
+          position relative
+          &:after
+            content ''
+            position absolute
+            bottom -10px
+            left 0
+            background white
+            height 2px
+            width 100%
+      svg 
+        width 25px
+        height 25px
+        fill none 
+        stroke white
+        margin-right 5px
+
+.scores
+  display none
+  @media screen and (min-width 550px)
+    display block
+    background rgb(242, 242, 242)
+    padding 50px 20px
+    .top
+      display flex
+      justify-content space-between
+    svg.scores-arrows
+      fill none 
+      stroke black
+      opacity .3
+      cursor pointer
+      width 40px
+      height 40px
+      &:hover
+        opacity 1
+        transform translateY(-2px)
+    h3.scores-day
+      font-size 30px
+    .bottom.date
+      text-align center
+      font-size 13px
+      opacity .5
+    .sport-type
+      display flex
+      align-items center
+      padding 25px 0
+      .sport-type-line
+        height 1px
+        opacity .1
+        background black
+        flex-grow 1
+      h4
+        font-size 20px
+        padding 0 20px
+    li.match 
+      display flex
+      align-items center
+      padding 25px 0
+      border-bottom 1px solid rgba(black,.1)
+    .team
+      display flex
+      align-items center
+      flex-basis 40%
+      img
+        width 50px
+        height 50px
+        object-fit contain
+    .score
+      flex-grow 1
+      text-align center
+    .team.team2 
+      justify-content flex-end
+      text-align right 
+      img
+        order 1
+        margin-left 20px
+    .team.team1 img
+      margin-right 20px
+    .team-name p:nth-child(1)
+      opacity .5
