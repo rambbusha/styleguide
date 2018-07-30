@@ -75,10 +75,25 @@
     display: block;
     width: 25px;
     height: 25px;
-    background-color: #fff;
     border-radius: 50%;
     margin-left: 10px;
   }
+  .nav-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+.nav-bar-right,
+li {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.nav-bar-right:hover,
+li:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 @media screen and (min-width: 550px) {
   .nav-bar-right {
@@ -184,7 +199,12 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #fff;
+}
+.navigation-wrapper .navigation-profile .navigation-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .navigation-wrapper li.big-screen {
   display: none;
@@ -262,6 +282,11 @@ ul.charts {
   font-size: 10px;
   max-width: 400px;
   margin: 0 auto;
+}
+@media screen and (max-width: 650px) {
+  ul.charts {
+    transform: translateX(0) !important;
+  }
 }
 @media screen and (min-width: 650px) {
   ul.charts {

@@ -231,7 +231,12 @@ h4.buble-txt {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #fff;
+}
+.navigation-wrapper .navigation-profile .navigation-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .navigation-wrapper li.big-screen {
   display: none;

@@ -145,6 +145,11 @@
         </div>
         <div class='temperature-wrapper'>
           <div class='temperature-now'>
+            <ul class='weather-controller'>
+              <li class='active'>TODAY</li>
+              <li>TOMORROW</li>
+              <li>WEEK</li>
+            </ul>
             <div class='weather-type-now'>
               <svg class='weather-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <use xlink:href='#cloud'></use>
@@ -162,9 +167,35 @@
           </div>
           <div class='chart'>
             <svg class='weather-chart'></svg>
+            <ul class='temeperatures-holder'>
+              <li>
+                <h2>65<span>o</span></h2>
+                <p>8 AM</p>
+              </li>
+              <li>
+                <h2>86<span>o</span></h2>
+                <p>12 PM</p>
+              </li>
+              <li>
+                <h2>79<span>o</span></h2>
+                <p>4 PM</p>
+              </li>
+              <li>
+                <h2>62<span>o</span></h2>
+                <p>8 PM</p>
+              </li>
+              <li>
+                <h2>59<span>o</span></h2>
+                <p>12 AM</p>
+              </li>
+              <li>
+                <h2>57<span>o</span></h2>
+                <p>1 PM</p>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class='stocks-widgets'>
+        <div class='stocks-widgets-mobile'>
           <div class='stock'>
             <div class='stock-header'>
               <h6 class='name'>NASDAQ</h6>
@@ -180,7 +211,6 @@
               <h3>5,005.55</h3>
             </div>
             <div class='svg-fake'>
-
             </div>
             <div class='details-button'>
               <h3>Details</h3>
@@ -205,6 +235,86 @@
             </div>
             <div class='details-button'>
               <h3>Details</h3>
+            </div>
+          </div>
+        </div>
+        <div class='stocks-widgets-big'>
+          <ul class='stocks-header'>
+            <li>
+              <div class='inner-content'>
+                <h2>NASADAQ</h2>
+                <h4>5,055.55</h4>
+                <h3 class='profit-perc down'>-0.85%</h3>
+              </div>
+            </li>
+            <li class='active'>
+              <div class='inner-content'>
+                <h2>APPL</h2>
+                <h4>127.55</h4>
+                <h3 class='profit-perc up'>+0.51%</h3>
+              </div>
+            </li>
+            <li>
+              <div class='inner-content'>
+                <h2>DOW J</h2>
+                <h4>19,256.02</h4>
+                <h3 class='profit-perc down'>-0.34%</h3>
+              </div>
+            </li>
+            <li>
+              <div class='inner-content'>
+                <h2>GOOG</h2>
+                <h4>534.33</h4>
+                <h3 class='profit-perc up'>+0.79%</h3>
+              </div>
+            </li>
+          </ul>
+          <div class='graph-pannel'>
+            <div class='panel-header'>
+              <div class='right'>
+                <h2 class='names'>NASDAQ:AAPL</h2>
+                <h1 class='ammount'>127.33</h1>
+                <p class='data'>Oct 12 2:16 PM EDT</p>
+              </div>
+              <div class='left'>
+                <ul class='info-one'>
+                  <li>
+                    <p class='low-opac'>Low</p>
+                    <p>126.88</p>
+                  </li>
+                  <li>
+                    <p class='low-opac'>High</p>
+                    <p>127.61</p>
+                  </li>
+                  <li>
+                    <p class='low-opac'>Open</p>
+                    <p>127.48</p>
+                  </li>
+                </ul>
+                <ul class='info-two'>
+                  <li>
+                    <p class='low-opac'>Market cap</p>
+                    <p>735.34B</p>
+                  </li>
+                  <li>
+                    <p class='low-opac'>Dividend yield</p>
+                    <p>1.63%</p>
+                  </li>  
+                  <li>
+                    <p class='low-opac'>P/E ratio (ttm)</p>
+                    <p>15.73</p>
+                  </li>                 
+                </ul>
+                <div class='points'>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+
+
+            </div>
+            <div class='graph-svg'>
+
             </div>
           </div>
         </div>
@@ -261,8 +371,7 @@
                 </div>
               </div>
               <div class='score'>
-                <h5>0
-                  <span class='points'>:</span>1</h5>
+                <h5>0<span class='points'>:</span>1</h5>
               </div>
               <div class='team team2'>
                 <img class='team-logo' src='images/t1.png' alt='team-logo'>
@@ -281,8 +390,7 @@
                 </div>
               </div>
               <div class='score'>
-                <h5>2
-                  <span class='points'>:</span>1</h5>
+                <h5>2<span class='points'>:</span>1</h5>
               </div>
               <div class='team team2'>
                 <img class='team-logo' src='images/t1.png' alt='team-logo'>
@@ -301,8 +409,7 @@
                 </div>
               </div>
               <div class='score'>
-                <h5>6
-                  <span class='points'>:</span>1</h5>
+                <h5>6<span class='points'>:</span>1</h5>
               </div>
               <div class='team team2'>
                 <img class='team-logo' src='images/t1.png' alt='team-logo'>
@@ -321,8 +428,7 @@
                 </div>
               </div>
               <div class='score'>
-                <h5>5
-                  <span class='points'>:</span>2</h5>
+                <h5>5<span class='points'>:</span>2</h5>
               </div>
               <div class='team team2'>
                 <img class='team-logo' src='images/t1.png' alt='team-logo'>
@@ -334,9 +440,38 @@
             </li>
           </ul>
         </div>
+        <div class='subscribe'>
+          <div class='plane-big-icon'>
+            <svg class='plane-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href='#plane'></use>
+            </svg>
+          </div>
+          <p>Get the day's top news stories delivered to your inbox.</p>
+          <form>
+            <div class='subscribe-email-wrapper'>
+              <label for='subscribe-email'>
+                <svg class='subscribe-svg' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href='#email'></use>
+                </svg>
+              </label>
+              <input id='subscribe-email' type='email' placeholder='Your Email'>
+            </div>
+            <input type='submit' value='Submit'>
+          </form>
+        </div>
       </div>
       <!-- REPLACE ON TOP -->
     </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class='filter' version="1.1">
+      <defs>
+        <filter width='300%' height='300%' id='drop-shadow'>
+          <feGaussianBlur in='SourceGraphic' stdDeviation='10' result='shadow' />
+          <feOffset in='shadow' dx='0' dy='10' result='shadow' />
+          <feColorMatrix in='shadow' mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result='shadow' />
+          <feBlend in='SourceGraphic' in2='shadow' />
+        </filter>
+      </defs>
+    </svg>
   </div>
 
 

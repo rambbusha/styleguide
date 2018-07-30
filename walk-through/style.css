@@ -324,7 +324,6 @@ h4.buble-txt {
     transform: rotate(-45deg);
   }
   .nav-bar-wrapper svg {
-    fill: #fff;
     width: 25px;
     height: 25px;
   }
@@ -362,10 +361,28 @@ h4.buble-txt {
     display: block;
     width: 25px;
     height: 25px;
-    background-color: #fff;
     border-radius: 50%;
     margin-left: 10px;
   }
+  .nav-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 1050px) {
+  .nav-avatar {
+    margin: 0 10px;
+  }
+}
+.nav-bar-right li {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.nav-bar-right li:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 @media screen and (min-width: 550px) {
   .nav-bar-right {
@@ -471,7 +488,12 @@ h4.buble-txt {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #fff;
+}
+.navigation-wrapper .navigation-profile .navigation-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .navigation-wrapper li.big-screen {
   display: none;
@@ -592,6 +614,7 @@ body {
   display: inline-block;
   white-space: normal;
   width: 80px;
+  position: relative;
   font-size: 10px;
   margin: 0 5px;
   opacity: 0.5;
@@ -704,6 +727,9 @@ body {
 .tooltip .double-circle span.circle {
   transform: scale(0);
 }
+.tooltip.active {
+  z-index: 20000;
+}
 .tooltip.active .double-circle span.circle {
   animation: pop 0.2s cubic-bezier(0, 0, 0.18, 0.49) forwards;
 }
@@ -754,6 +780,63 @@ li.article:nth-child(2) .tooltip .double-circle {
 li.article:nth-child(2) .tooltip .double-circle span.circle:nth-child(2) {
   top: 24px;
   right: -99px;
+}
+li.article:hover ul.sharing-options {
+  opacity: 1;
+}
+ul.sharing-options {
+  display: none;
+}
+@media screen and (min-width: 950px) {
+  ul.sharing-options {
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    right: 15px;
+    width: 130px;
+    opacity: 0;
+    transition: 0.2s ease opacity;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  ul.sharing-options a {
+    width: 40px;
+    height: 40px;
+    background-color: #f96332;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+  ul.sharing-options a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  ul.sharing-options a svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    fill: none;
+  }
+}
+.bookmarks {
+  display: none;
+}
+@media screen and (min-width: 1050px) {
+  .bookmarks {
+    display: block;
+    fill: none;
+    stroke: #fff;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 1050px) {
+  .tooltip {
+    display: none !important;
+  }
 }
 @-moz-keyframes pop {
   to {

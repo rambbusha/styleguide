@@ -242,6 +242,12 @@ input {
   border: none;
   outline: none;
 }
+svg.filter {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
 .widgets {
   width: 100%;
   min-height: 100vh;
@@ -272,6 +278,12 @@ input {
   width: 50px;
   height: 50px;
 }
+@media screen and (min-width: 550px) {
+  .temperature-wrapper .weather-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
 .temperature-wrapper .temperature-now {
   padding: 0 15px;
   display: flex;
@@ -282,17 +294,33 @@ input {
 .temperature-wrapper .temperature-now .text {
   font-size: 17px;
 }
+@media screen and (min-width: 550px) {
+  .temperature-wrapper .temperature-now .text {
+    font-size: 20px;
+  }
+}
 .temperature-wrapper .temperature-now .text h6.city {
   font-size: 16px;
   opacity: 0.5;
 }
+@media screen and (min-width: 550px) {
+  .temperature-wrapper .temperature-now .text h6.city {
+    font-size: 18px;
+  }
+}
 .temperature-wrapper .degree-now {
   position: relative;
   padding-right: 5px;
+  align-self: flex-end;
 }
 .temperature-wrapper .degree-now h1 {
   font-size: 120px;
   line-height: 100px;
+}
+@media screen and (min-width: 550px) {
+  .temperature-wrapper .degree-now h1 {
+    font-size: 135px;
+  }
 }
 .temperature-wrapper .degree-now span {
   font-weight: bold;
@@ -301,17 +329,27 @@ input {
   right: -5px;
   position: absolute;
 }
-.stocks-widgets {
+@media screen and (min-width: 550px) {
+  .temperature-wrapper .degree-now span {
+    top: -53px;
+  }
+}
+.stocks-widgets-mobile {
   display: flex;
   flex-grow: 1;
   background: #fff;
 }
-.stocks-widgets .stock {
+@media screen and (min-width: 550px) {
+  .stocks-widgets-mobile {
+    display: none;
+  }
+}
+.stocks-widgets-mobile .stock {
   border-right: 1px solid rgba(0,0,0,0.3);
   flex-basis: 50%;
   padding: 20px 0;
 }
-.stocks-widgets .stock .stock-header {
+.stocks-widgets-mobile .stock .stock-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -319,7 +357,7 @@ input {
   padding: 0 10px;
   font-size: 20px;
 }
-.stocks-widgets .stock .bubles-options {
+.stocks-widgets-mobile .stock .bubles-options {
   width: 20px;
   height: 20px;
   position: relative;
@@ -330,38 +368,42 @@ input {
   cursor: pointer;
   opacity: 0.5;
 }
-.stocks-widgets .stock .bubles-options:hover {
+.stocks-widgets-mobile .stock .bubles-options:hover {
   opacity: 0.8;
 }
-.stocks-widgets .stock .bubles-options span {
+.stocks-widgets-mobile .stock .bubles-options span {
   width: 5px;
   height: 5px;
   border: 2px solid #000;
   border-radius: 50px;
   position: relative;
 }
-.stocks-widgets .stock .proffit {
+.stocks-widgets-mobile .stock .proffit {
   padding: 15px 10px 0;
   font-size: 19px;
 }
-.stocks-widgets .stock .proffit.up {
+.stocks-widgets-mobile .stock .proffit h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+.stocks-widgets-mobile .stock .proffit.up {
   color: #63da38;
 }
-.stocks-widgets .stock .proffit.down {
+.stocks-widgets-mobile .stock .proffit.down {
   color: #ff3636;
 }
-.stocks-widgets .stock .total-sales {
+.stocks-widgets-mobile .stock .total-sales {
   padding: 0 10px;
   opacity: 0.5;
   font-size: 14px;
 }
-.stocks-widgets .stock .details-button {
+.stocks-widgets-mobile .stock .details-button {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
 }
-.stocks-widgets .stock .details-button h3 {
+.stocks-widgets-mobile .stock .details-button h3 {
   color: #f96332;
   border: 1px solid rgba(0,0,0,0.2);
   cursor: pointer;
@@ -369,7 +411,7 @@ input {
   font-size: 15px;
   padding: 8px 25px;
 }
-.stocks-widgets .stock .details-button h3:hover {
+.stocks-widgets-mobile .stock .details-button h3:hover {
   color: #fff;
   border: 1px solid #f96332;
   background-color: #f96332;
@@ -382,8 +424,10 @@ svg.weather-chart {
   fill: none;
 }
 svg.weather-chart g {
-  stroke: #000;
-  stroke-width: 5;
+  stroke: #ffb236;
+}
+svg.weather-chart g.main {
+  filter: url("#drop-shadow");
 }
 .big-article {
   display: none;
@@ -464,7 +508,7 @@ svg.weather-chart g {
   .scores {
     display: block;
     background: #f2f2f2;
-    padding: 50px 20px;
+    padding: 50px 20px 0;
   }
   .scores .top {
     display: flex;
@@ -510,6 +554,7 @@ svg.weather-chart g {
     align-items: center;
     padding: 25px 0;
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
   }
   .scores .team {
     display: flex;
@@ -538,6 +583,214 @@ svg.weather-chart g {
   }
   .scores .team-name p:nth-child(1) {
     opacity: 0.5;
+  }
+  .scores h5 {
+    font-size: 20px;
+  }
+  .scores h5 span {
+    opacity: 0.3;
+    margin: 0 20px;
+  }
+}
+.subscribe {
+  display: none;
+}
+@media screen and (min-width: 550px) {
+  .subscribe {
+    display: flex;
+    box-shadow: inset 0 0 40px rgba(0,0,0,0.2);
+    flex-direction: column;
+    align-items: center;
+    background-color: #f96332;
+    padding: 200px 0 150px;
+    position: relative;
+  }
+  .subscribe p {
+    color: rgba(255,255,255,0.5);
+    font-size: 15px;
+  }
+  .subscribe form {
+    width: 300px;
+  }
+  .subscribe form .subscribe-email-wrapper {
+    width: 100%;
+    position: relative;
+    margin: 40px 0 15px;
+  }
+  .subscribe form .subscribe-email-wrapper input {
+    width: 100%;
+    height: 50px;
+    padding: 0 20px 0 60px;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.1);
+    box-sizing: border-box;
+    font-weight: 100;
+  }
+  .subscribe form .subscribe-email-wrapper ::placeholder {
+    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+  }
+  .subscribe form input[type="submit"] {
+    color: #f96332;
+    height: 50px;
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+    font-size: 13px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.1s linear all;
+  }
+  .subscribe form input[type="submit"]:hover {
+    box-shadow: none;
+    transform: translateY(2px);
+  }
+  .subscribe form label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    cursor: pointer;
+  }
+  .subscribe form label svg {
+    fill: none;
+    stroke: rgba(255,255,255,0.8);
+    width: 25px;
+    height: 25px;
+  }
+  .subscribe .plane-big-icon {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    top: -85px;
+    right: -85px;
+  }
+  .subscribe .plane-big-icon svg {
+    fill: none;
+    stroke: #f96332;
+  }
+}
+ul.temeperatures-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0 15px;
+  transform: translateY(-20px);
+  text-align: center;
+}
+ul.temeperatures-holder h2 {
+  position: relative;
+  display: block;
+  font-size: 30px;
+}
+ul.temeperatures-holder h2 span {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  font-size: 15px;
+}
+ul.temeperatures-holder p {
+  opacity: 0.5;
+  font-size: 11px;
+}
+.weather-controller {
+  display: none;
+  z-index: 10;
+}
+@media screen and (min-width: 550px) {
+  .weather-controller {
+    display: flex;
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    font-weight: 800;
+    font-size: 13px;
+  }
+  .weather-controller li {
+    opacity: 0.5;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  .weather-controller li:hover {
+    opacity: 1;
+  }
+  .weather-controller li.active {
+    position: relative;
+    opacity: 1;
+  }
+  .weather-controller li.active:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #fff;
+  }
+}
+.stocks-widgets-big {
+  display: none;
+}
+@media screen and (min-width: 550px) {
+  .stocks-widgets-big {
+    display: flex;
+    flex-direction: column;
+  }
+  .stocks-widgets-big ul.stocks-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    box-shadow: 2px 8px 80px rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .stocks-widgets-big ul.stocks-header li {
+    padding: 30px 0;
+    flex-basis: 25%;
+    text-align: center;
+  }
+  .stocks-widgets-big ul.stocks-header li.active {
+    background-color: rgba(0,0,0,0.05);
+  }
+  .stocks-widgets-big ul.stocks-header:not(:last-child) .inner-content {
+    border-right: 1px solid rgba(0,0,0,0.05);
+  }
+  .stocks-widgets-big ul.stocks-header .inner-content .up {
+    color: #63da38;
+  }
+  .stocks-widgets-big ul.stocks-header .inner-content .down {
+    color: #ff3636;
+  }
+  .stocks-widgets-big ul.stocks-header .inner-content h2 {
+    font-size: 20px;
+  }
+  .stocks-widgets-big ul.stocks-header .inner-content h4 {
+    opacity: 0.4;
+    font-size: 15px;
+    margin: 5px 0 10px;
+  }
+  .stocks-widgets-big ul.stocks-header .inner-content h3 {
+    font-size: 25px;
+  }
+  .stocks-widgets-big .graph-pannel {
+    padding: 30px 15px 250px;
+    background: #fff;
+  }
+  .stocks-widgets-big .graph-pannel .panel-header {
+    display: flex;
   }
 }
 .app-wrapper {

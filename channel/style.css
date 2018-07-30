@@ -315,6 +315,7 @@ div.logo {
 }
 .nav-bar-right div {
   opacity: 0.8;
+  cursor: pointer;
 }
 .nav-bar-right div.active,
 .nav-bar-right div:hover {
@@ -326,6 +327,14 @@ div.logo {
     display: flex;
     align-self: center;
   }
+}
+.nav-bar-right li {
+  opacity: 0.9;
+  cursor: pointer;
+}
+.nav-bar-right li:hover {
+  opacity: 1;
+  transform: translateY(-2px);
 }
 .navigation-bg {
   width: 120%;
@@ -426,7 +435,12 @@ div.logo {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #fff;
+}
+.navigation-wrapper .navigation-profile .navigation-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 .navigation-wrapper li.big-screen {
   display: none;
@@ -665,6 +679,8 @@ h2.section-title {
 .settings-inner {
   flex-grow: 1;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
 }
 @media screen and (min-width: 950px) {
   .settings-inner {

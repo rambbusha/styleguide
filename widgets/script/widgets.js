@@ -10,11 +10,36 @@ const temperaturesData = [
 
 
 
-function chart(data,val1,val2,parent,height , svg){
+
+function debounce(func,wait=10,immediate=false){
+  let timeout;
+  return function(){
+      let context =this , args = arguments;
+      let later = function(){
+          timeout = null;
+          if(!immediate) func.apply(context,args)
+      };
+      let callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later,wait);
+      if(callNow) func.apply(context,args);
+  }
+}
+
+window.addEventListener('resize',debounce(windowResizeHandler))
+
+
+function windowResizeHandler(e){
+  chart(temperaturesData,'date','tepmerature','temperature-wrapper',200,d3.select('svg.weather-chart') ,5)
+}
+
+
+function chart(data,val1,val2,parent,height , svg , stroke){
   const parentWidth = document.querySelector(`.${parent}`).offsetWidth + 20;
+  const parentHeight = height;
   
   const x = d3.scaleLinear().range([0,parentWidth]);
-  const y = d3.scaleLinear().range([height * 2,0]);
+  const y = d3.scaleLinear().range([parentHeight * 2,0]);
   const line = d3.line()
                .x((d)=>x(d[val1]))
                .y((d)=>y(d[val2]))
@@ -25,19 +50,44 @@ function chart(data,val1,val2,parent,height , svg){
   const drawIt = (data) => {
     x.domain(d3.extent(data,(d)=>d[val1]))
     y.domain(d3.extent(data, (d)=>d[val2]))
-
+    svg.selectAll('*').remove();
     svg.attr('width',parentWidth)
-       .attr('height',height)
-        .append('g')
+       .attr('height',parentHeight)
+
+    svg.append('g')
+        .attr('class','main')
+        .attr('stroke-width',stroke)
         .append('path')
         .data([data])
         .attr('d' , line)
-        .attr('transform',`translate(-10,${-height})`)
+        .attr('transform',`translate(-10,${-parentHeight})`)
 
+    svg.append('g')
+      .attr('class','mask')
+      .attr('stroke-width',stroke * 4)
+      .append('path')
+      .data([data])
+      .attr('d' , line)
+      .attr('transform',`translate(-10,${-parentHeight - stroke * 2 })`)
 
     const dataLength = data.length;
 
-    svg.selectAll("text")
+    
+  }
+
+  drawIt(data)
+}
+
+
+
+chart(temperaturesData,'date','tepmerature','temperature-wrapper',200,d3.select('svg.weather-chart') ,5)
+
+
+
+
+
+/*
+svg.selectAll("text")
         .data(data)
         .enter()
         .append("text")
@@ -54,16 +104,4 @@ function chart(data,val1,val2,parent,height , svg){
         .attr("font-family", "Montserrat, sans-serif")
         .attr("font-size", "20px")
         .attr("fill", "black");
-  }
-
-  drawIt(data)
-}
-
-
-
-chart(temperaturesData,'date','tepmerature','temperature-wrapper',200,d3.select('svg.weather-chart'))
-
-
-
-
-
+        */

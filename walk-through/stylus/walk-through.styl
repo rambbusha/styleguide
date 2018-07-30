@@ -72,6 +72,7 @@ body
     display inline-block
     white-space normal
     width mobileLiWidth
+    position relative
     font-size 10px
     margin 0 5px
     opacity .5
@@ -161,6 +162,7 @@ body
   .double-circle span.circle
     transform scale(0)
   &.active
+    z-index 20000
     .double-circle span.circle
       animation pop .2s cubic-bezier(0, 0, 0.18, .49) forwards
       &:nth-child(2)
@@ -212,3 +214,49 @@ li.article:nth-child(2) .tooltip
     opacity 0
   to
     opacity 1
+
+
+li.article:hover ul.sharing-options
+  opacity 1
+
+ul.sharing-options
+  display none
+  @media screen and (min-width 950px)
+    position absolute
+    z-index 10
+    top 15px
+    right 15px
+    width 130px
+    opacity 0
+    transition .2s ease opacity 
+    display flex
+    align-items flex-end
+    justify-content space-between
+    a
+      width 40px
+      height 40px
+      background-color orange 
+      flexCenter()
+      border-radius 50%
+      opacity .8
+      &:hover
+        opacity 1
+        transform translateY(-2px)
+      svg 
+        width 20px
+        height 20px
+        stroke #ffffff
+        fill none
+
+
+.bookmarks
+  display none
+  @media screen and (min-width 1050px)
+    display block
+    fill none 
+    stroke white
+    cursor pointer
+
+@media screen and (min-width 1050px)
+  .tooltip
+    display none !important
