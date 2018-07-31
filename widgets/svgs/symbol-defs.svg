@@ -227,6 +227,10 @@
         <path d="M262 0L218.783 206.062L0 105.958L262 0" transform="translate(20 32.0225)" stroke-width="12" stroke-linecap="round"/>
         <path d="M166 0L0 146.756V236.071L40.7453 175.034" transform="translate(114 34.0234)"  stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
+    <symbol id="play" viewBox="0 0 17 24">
+      <title>play</title>    
+      <path d="M0 21V0L14.5 10.5L0 21Z" transform="translate(1 1.5)" />
+    </symbol>
   </defs>
 
 
