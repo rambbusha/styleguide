@@ -256,7 +256,7 @@ svg.filter {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 750px) {
   .widgets {
     flex-direction: row;
     flex-wrap: wrap;
@@ -278,11 +278,10 @@ svg.filter {
   color: #fff;
   padding: 20px 0;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 750px) {
   .temperature-wrapper {
     flex-basis: 50%;
     width: 50%;
-    padding: 0;
   }
 }
 .temperature-wrapper .weather-icon {
@@ -293,8 +292,8 @@ svg.filter {
 }
 @media screen and (min-width: 550px) {
   .temperature-wrapper .weather-icon {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 }
 .temperature-wrapper .temperature-now {
@@ -303,6 +302,11 @@ svg.filter {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+}
+@media screen and (min-width: 1000px) {
+  .temperature-wrapper .temperature-now {
+    padding: 0 30px;
+  }
 }
 .temperature-wrapper .temperature-now .text {
   font-size: 17px;
@@ -335,6 +339,11 @@ svg.filter {
     font-size: 135px;
   }
 }
+@media screen and (min-width: 750px) {
+  .temperature-wrapper .degree-now h1 {
+    font-size: 120px;
+  }
+}
 .temperature-wrapper .degree-now span {
   font-weight: bold;
   font-size: 30px;
@@ -360,6 +369,8 @@ svg.filter {
 .stocks-widgets-mobile .stock {
   border-right: 1px solid rgba(0,0,0,0.3);
   flex-basis: 50%;
+  width: 50vw;
+  overflow: hidden;
   padding: 20px 0;
 }
 .stocks-widgets-mobile .stock .stock-header {
@@ -432,6 +443,14 @@ svg.filter {
 }
 .svg-fake {
   height: 100px;
+}
+.small-graph svg,
+.big-stock-svg svg {
+  fill: none;
+}
+.small-graph svg g.main,
+.big-stock-svg svg g.main {
+  filter: url("#drop-shadow");
 }
 svg.weather-chart {
   fill: none;
@@ -514,9 +533,12 @@ svg.weather-chart g.main {
     margin-right: 5px;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 750px) {
   .big-article {
     flex-basis: 50%;
+    background-position: right;
+    max-height: unset;
+    height: unset;
     order: -1;
     box-sizing: border-box;
   }
@@ -682,13 +704,18 @@ svg.weather-chart g.main {
     margin: 0 20px;
   }
 }
+@media screen and (min-width: 750px) {
+  .scores {
+    flex-basis: 100%;
+  }
+}
 @media screen and (min-width: 1000px) {
   .scores {
     flex-basis: 50%;
     order: 3;
     height: 700px;
     position: relative;
-    box-shadow: 0px 9px 39px rgba(0,0,0,0.15);
+    box-shadow: 0px 9px 39px rgba(0,0,0,0.15), inset 1px 11px 17px rgba(0,0,0,0.02);
     overflow-y: auto;
   }
 }
@@ -737,6 +764,7 @@ svg.weather-chart g.main {
   .subscribe form input[type="submit"] {
     color: #f96332;
     height: 50px;
+    background-color: #fff;
     width: 100%;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
     font-size: 13px;
@@ -784,6 +812,11 @@ svg.weather-chart g.main {
     stroke: #f96332;
   }
 }
+@media screen and (min-width: 750px) {
+  .subscribe {
+    flex-basis: 100%;
+  }
+}
 @media screen and (min-width: 1000px) {
   .subscribe {
     flex-basis: 55%;
@@ -805,7 +838,6 @@ ul.temeperatures-holder {
   justify-content: space-between;
   flex-direction: row;
   padding: 0 15px;
-  transform: translateY(-20px);
   text-align: center;
 }
 ul.temeperatures-holder h2 {
@@ -877,6 +909,7 @@ ul.temeperatures-holder p {
     padding: 30px 0;
     flex-basis: 25%;
     text-align: center;
+    cursor: pointer;
   }
   .stocks-widgets-big ul.stocks-header li.active {
     background-color: rgba(0,0,0,0.05);
@@ -902,28 +935,123 @@ ul.temeperatures-holder p {
     font-size: 25px;
   }
   .stocks-widgets-big .graph-pannel {
-    padding: 30px 15px 250px;
+    padding: 30px 19px 0px;
     background: #fff;
   }
-  .stocks-widgets-big .graph-pannel .panel-header {
+  .stocks-widgets-big .panel-header {
     display: flex;
+    justify-content: space-between;
+  }
+  .stocks-widgets-big .panel-header .right h2.names {
+    color: rgba(0,0,0,0.3);
+    font-size: 23px;
+  }
+  .stocks-widgets-big .panel-header .right h1.ammount {
+    font-size: 60px;
+    margin: -5px 0 10px;
+  }
+  .stocks-widgets-big .panel-header .right p.data {
+    font-size: 10px;
+    color: rgba(0,0,0,0.3);
+  }
+  .stocks-widgets-big .panel-header .left {
+    display: flex;
+    flex-grow: 1;
+    max-width: 300px;
+    font-size: 15px;
+    justify-content: space-between;
+  }
+  .stocks-widgets-big .panel-header .left li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .stocks-widgets-big .panel-header .left li p.low-opac {
+    color: rgba(0,0,0,0.3);
+    margin: 0;
+  }
+  .stocks-widgets-big .panel-header .left li p {
+    margin-left: 8px;
+    flex-basis: 30%;
+  }
+  .stocks-widgets-big .panel-header .left .info-two {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .stocks-widgets-big .panel-header .left .info-two p.low-opac {
+    flex-grow: 1;
+  }
+}
+@media screen and (min-width: 750px) {
+  .stocks-widgets-big {
+    width: 100vw;
+    flex-basis: 100%;
+    overflow: hidden;
   }
 }
 @media screen and (min-width: 1000px) {
   .stocks-widgets-big {
-    flex-basis: 100%;
     flex-direction: row;
   }
 }
 @media screen and (min-width: 550px) and (min-width: 1000px) {
   .stocks-widgets-big ul.stocks-header {
     flex-direction: column;
-    width: 200px;
+    width: 350px;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 1000px) {
+  .stocks-widgets-big li {
+    padding: 0 !important;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 1000px) {
+  .stocks-widgets-big:not(:last-child) .inner-content {
+    border-right: 0 !important;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 1000px) {
+  .stocks-widgets-big .inner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: left;
+    max-width: 230px;
+    padding: 25px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #e9e9e9;
   }
 }
 @media screen and (min-width: 550px) and (min-width: 1000px) {
   .stocks-widgets-big .graph-pannel {
     flex-grow: 1;
+    overflow: hidden;
+    width: 80vw;
+    padding: 30px 17px 0px;
+  }
+  .stocks-widgets-big .panel-header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .stocks-widgets-big .panel-header .right {
+    margin-right: 80px;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 750px) {
+  .stocks-widgets-big .left {
+    padding-right: 30px;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 1000px) {
+  .stocks-widgets-big .left {
+    max-width: 330px;
+  }
+}
+@media screen and (min-width: 550px) and (min-width: 1000px) {
+  .stocks-widgets-big .info-two {
+    margin-left: 50px;
   }
 }
 .match-details .match-details-content {
@@ -998,6 +1126,11 @@ ul.temeperatures-holder p {
 }
 .article {
   display: none;
+}
+@media screen and (min-width: 750px) {
+  .widgets-subscribe-article {
+    flex-basis: 100%;
+  }
 }
 @media screen and (min-width: 1000px) {
   .widgets-subscribe-article {
@@ -1116,6 +1249,33 @@ ul.temeperatures-holder p {
     opacity: 0;
     transform: scale(0);
   }
+}
+.big-stock-svg {
+  position: relative;
+  padding-bottom: 25px;
+}
+.big-stock-svg ul.months {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: rgba(0,0,0,0.3);
+  font-size: 10px;
+  font-weight: bold;
+  margin-top: 30px;
+}
+.big-stock-svg .years {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  line-height: 33px;
+  font-size: 30px;
+  color: rgba(0,0,0,0.1);
 }
 @-moz-keyframes fadeIn {
   to {

@@ -146,9 +146,9 @@
         <div class='temperature-wrapper'>
           <div class='temperature-now'>
             <ul class='weather-controller'>
-              <li class='active'>TODAY</li>
-              <li>TOMORROW</li>
-              <li>WEEK</li>
+              <li data-for='today' class='active'>TODAY</li>
+              <li data-for='tomorrow'>TOMORROW</li>
+              <li data-for='week'>WEEK</li>
             </ul>
             <div class='weather-type-now'>
               <svg class='weather-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -165,7 +165,7 @@
               </h1>
             </div>
           </div>
-          <div class='chart'>
+          <div class='weather-chart-holder'>
             <svg class='weather-chart'></svg>
             <ul class='temeperatures-holder'>
               <li>
@@ -192,6 +192,10 @@
                 <h2>57<span>o</span></h2>
                 <p>1 PM</p>
               </li>
+              <li>
+                <h2>55<span>o</span></h2>
+                <p>10 PM</p>
+              </li>
             </ul>
           </div>
         </div>
@@ -210,7 +214,8 @@
             <div class='total-sales'>
               <h3>5,005.55</h3>
             </div>
-            <div class='svg-fake'>
+            <div class='small-graph nasdaq'>
+              <svg></svg>
             </div>
             <div class='details-button'>
               <h3>Details</h3>
@@ -230,8 +235,8 @@
             <div class='total-sales'>
               <h3>4,576.00</h3>
             </div>
-            <div class='svg-fake'>
-
+            <div class='small-graph dow'>
+              <svg></svg>
             </div>
             <div class='details-button'>
               <h3>Details</h3>
@@ -240,31 +245,39 @@
         </div>
         <div class='stocks-widgets-big'>
           <ul class='stocks-header'>
-            <li>
+            <li data-name='nasdaq'>
               <div class='inner-content'>
-                <h2>NASADAQ</h2>
-                <h4>5,055.55</h4>
+                <div class='group'>
+                  <h2>NASADAQ</h2>
+                  <h4>5,055.55</h4>
+                </div>
                 <h3 class='profit-perc down'>-0.85%</h3>
               </div>
             </li>
-            <li class='active'>
+            <li data-name='appl' class='active'>
               <div class='inner-content'>
-                <h2>APPL</h2>
-                <h4>127.55</h4>
+                <div class='group'>
+                  <h2>APPL</h2>
+                  <h4>127.55</h4>
+                </div>
                 <h3 class='profit-perc up'>+0.51%</h3>
               </div>
             </li>
-            <li>
+            <li data-name='dow'>
               <div class='inner-content'>
-                <h2>DOW J</h2>
-                <h4>19,256.02</h4>
+                <div class='group'>
+                  <h2>DOW J</h2>
+                  <h4>19,256.02</h4>
+                </div>
                 <h3 class='profit-perc down'>-0.34%</h3>
               </div>
             </li>
-            <li>
+            <li data-name='coog'>
               <div class='inner-content'>
-                <h2>GOOG</h2>
-                <h4>534.33</h4>
+                <div class='group'>
+                  <h2>GOOG</h2>
+                  <h4>534.33</h4>
+                </div>
                 <h3 class='profit-perc up'>+0.79%</h3>
               </div>
             </li>
@@ -313,8 +326,25 @@
 
 
             </div>
-            <div class='graph-svg'>
-
+            <div class='big-stock-svg'>
+              <svg></svg>
+              <ul class='months'>
+                <li class='month'>Apr</li>
+                <li class='month'>May</li>
+                <li class='month'>Jun</li>
+                <li class='month'>Jul</li>
+                <li class='month'>Aug</li>
+                <li class='month'>Sep</li>
+                <li class='month'>Oct</li>
+                <li class='month'>Nov</li>
+                <li class='month'>Dec</li>
+                <li class='month'>Jan</li>
+                <li class='month'>Feb</li>
+              </ul>
+              <div class='years'>
+                <h2 class='year'>2014</h2>
+                <h2 class='year'>2015</h2>
+              </div>
             </div>
           </div>
         </div>
@@ -550,7 +580,7 @@
         <filter width='300%' height='300%' id='drop-shadow'>
           <feGaussianBlur in='SourceGraphic' stdDeviation='10' result='shadow' />
           <feOffset in='shadow' dx='0' dy='10' result='shadow' />
-          <feColorMatrix in='shadow' mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result='shadow' />
+          <feColorMatrix in='shadow' mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .8 0" result='shadow' />
           <feBlend in='SourceGraphic' in2='shadow' />
         </filter>
       </defs>

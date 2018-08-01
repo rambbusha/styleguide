@@ -17,7 +17,7 @@ svg.filter
   min-height 100vh
   display flex
   flex-direction column
-  @media screen and (min-width 1000px)
+  @media screen and (min-width 750px)
     flex-direction row
     flex-wrap wrap
   .header
@@ -32,20 +32,21 @@ svg.filter
   background-color rgba(#FFB235,1)
   color white
   padding 20px 0
-  @media screen and (min-width 1000px)
+  @media screen and (min-width 750px)
     flex-basis 50%
     width 50%
-    padding 0
   .weather-icon
     fill none 
     stroke white
     width 50px
     height 50px
     @media screen and (min-width 550px)
-      width 120px
-      height 120px
+      width 100px
+      height 100px
   .temperature-now
     padding 0 15px
+    @media screen and (min-width 1000px)
+      padding 0 30px
     flexCenter(row,space-between)
     .text
       font-size 17px
@@ -65,6 +66,8 @@ svg.filter
       line-height 100px
       @media screen and (min-width 550px)
         font-size 135px
+      @media screen and (min-width 750px)
+        font-size 120px
     span
       font-weight bold
       font-size 30px
@@ -83,6 +86,8 @@ svg.filter
   .stock
     border-right 1px solid rgba(black , .3)
     flex-basis 50%
+    width 50vw
+    overflow hidden
     padding 20px 0
     .stock-header
       flexCenter(row,space-between)
@@ -134,6 +139,12 @@ svg.filter
 
 .svg-fake
   height 100px
+
+.small-graph svg,
+.big-stock-svg svg
+  fill none 
+  g.main
+    filter url(#drop-shadow)
 
 svg.weather-chart
   fill none 
@@ -197,8 +208,11 @@ svg.weather-chart
         fill none 
         stroke white
         margin-right 5px
-  @media screen and (min-width 1000px)
+  @media screen and (min-width 750px)
     flex-basis 50%
+    background-position right 
+    max-height unset 
+    height unset
     order -1
     box-sizing border-box
 
@@ -322,12 +336,14 @@ svg.weather-chart
       span 
         opacity .3
         margin 0 20px
+  @media screen and (min-width 750px)
+    flex-basis 100%
   @media screen and (min-width 1000px)
     flex-basis 50%
     order 3
     height 700px
     position relative
-    box-shadow 0px 9px 39px rgba(0, 0, 0, 0.15)
+    box-shadow 0px 9px 39px rgba(0,0,0,0.15), inset 1px 11px 17px rgba(0,0,0,.02)
     overflow-y auto
 
 .subscribe
@@ -367,6 +383,7 @@ svg.weather-chart
       input[type="submit"]
         color orange 
         height 50px
+        background-color white
         width 100%
         box-shadow 2px 2px 10px rgba(0, 0, 0, 0.25)
         font-size 13px
@@ -406,6 +423,8 @@ svg.weather-chart
       svg 
         fill none 
         stroke orange
+  @media screen and (min-width 750px)
+    flex-basis 100%
   @media screen and (min-width 1000px)
     flex-basis 55%
     box-sizing border-box
@@ -414,7 +433,6 @@ svg.weather-chart
 ul.temeperatures-holder
   flexCenter(row,space-between)
   padding 0 15px
-  transform translateY(-20px)
   text-align center
   h2 
     position relative
@@ -470,16 +488,28 @@ ul.temeperatures-holder
       position relative
       @media screen and (min-width 1000px)
         flex-direction column
-        width 200px
+        width 350px
       li 
         padding 30px 0
         flex-basis 25%
         text-align center
+        cursor pointer
+        @media screen and (min-width 1000px)
+          padding 0 !important
         &.active
           background-color rgba(0, 0, 0, 0.05)
       &:not(:last-child) .inner-content
         border-right 1px solid rgba(0, 0, 0, 0.05)
+        @media screen and (min-width 1000px)
+          border-right 0 !important
       .inner-content 
+        @media screen and (min-width 1000px)
+          flexCenter(row , space-between)
+          text-align left
+          max-width 230px
+          padding 25px 0
+          margin 0 auto
+          border-bottom 1px solid rgb(233,233,233)
         .up 
           color green
         .down
@@ -493,14 +523,62 @@ ul.temeperatures-holder
         h3
           font-size 25px
     .graph-pannel
-      padding 30px 15px 250px
+      padding 30px 19px 0px
       background white
+
       @media screen and (min-width 1000px)
         flex-grow 1
-      .panel-header
+        overflow hidden
+        width 80vw
+        padding 30px 17px 0px
+        .panel-header
+          display flex
+          justify-content flex-start
+          .right 
+            margin-right 80px
+    .panel-header
+      display flex
+      justify-content space-between
+      .right 
+        h2.names
+          color rgba(black, .3)
+          font-size 23px
+        h1.ammount
+          font-size 60px
+          margin -5px 0 10px
+        p.data
+          font-size 10px
+          color rgba(black, .3)
+      .left
         display flex
-  @media screen and (min-width 1000px)
+        flex-grow 1
+        max-width 300px
+        font-size 15px
+        justify-content space-between
+        @media screen and (min-width 750px)
+          padding-right 30px
+        @media screen and (min-width 1000px)
+          max-width 330px
+        li
+          flexCenter(row,space-between)
+          p.low-opac
+            color rgba(black,.3)
+            margin 0
+          p
+            margin-left 8px
+            flex-basis 30%
+        .info-two
+          flex-grow 1
+          margin-left 20px
+          @media screen and (min-width 1000px)
+            margin-left 50px
+          p.low-opac
+            flex-grow 1
+  @media screen and (min-width 750px)
+    width 100vw
     flex-basis 100%
+    overflow hidden
+  @media screen and (min-width 1000px)
     flex-direction row
 
 .match-details
@@ -561,6 +639,10 @@ ul.temeperatures-holder
 
 .article
   display none
+
+@media screen and (min-width 750px)
+  .widgets-subscribe-article
+    flex-basis 100%
 
 @media screen and (min-width 1000px)
   .widgets-subscribe-article
@@ -651,6 +733,24 @@ ul.temeperatures-holder
           opacity 0
           transform scale(0)
 
+.big-stock-svg
+  position relative
+  padding-bottom 25px
+  ul.months
+    flexCenter(row,space-between)
+    color rgba(black,.3)
+    font-size 10px
+    font-weight bold
+    margin-top 30px
+  .years
+    flexCenter(row,space-between)
+    position absolute
+    width 100%
+    bottom 0
+    left 0
+    line-height 33px
+    font-size 30px
+    color rgba(black , .1)
 @keyframes fadeIn 
   to 
     opacity 1
