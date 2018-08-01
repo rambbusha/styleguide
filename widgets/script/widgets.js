@@ -417,6 +417,8 @@ function updateBigChart(data){
     .transition()
     .duration(1000)
     .call(customYAxis)
+  
+  svgS.select(".domain").remove()
 
   d3.select('.big-stock-svg g.mask path')
     .data([data])
