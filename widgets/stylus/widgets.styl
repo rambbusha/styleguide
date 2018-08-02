@@ -277,6 +277,13 @@ svg.weather-chart
         width 100%
         cursor pointer
         align-items center
+        position relative
+        .match-overlay
+          position absolute
+          top 0
+          left 0
+          width 100%
+          height 100%
       &:not(:last-child):after
         content ''
         position absolute
@@ -310,6 +317,13 @@ svg.weather-chart
           box-sizing border-box
           text-align right
           flex-basis 40%
+    li.no-game
+      text-align center
+      max-width 300px
+      padding 50px 20px
+      margin 0 auto
+      font-size 20px
+      color rgba(black,.5)
     .team
       display flex
       align-items center
@@ -338,11 +352,11 @@ svg.weather-chart
         margin 0 20px
   @media screen and (min-width 750px)
     flex-basis 100%
+    position relative
   @media screen and (min-width 1000px)
     flex-basis 50%
     order 3
     height 700px
-    position relative
     box-shadow 0px 9px 39px rgba(0,0,0,0.15), inset 1px 11px 17px rgba(0,0,0,.02)
     overflow-y auto
 
@@ -412,6 +426,7 @@ svg.weather-chart
       background-color rgba(white,.1)
       border-radius 50%
       flexCenter()
+      transition .3s linear all
       position absolute
       top -85px
       right -85px
@@ -489,6 +504,7 @@ ul.temeperatures-holder
       @media screen and (min-width 1000px)
         flex-direction column
         width 350px
+        box-shadow 2px 8px 50px rgba(0, 0, 0, 0.1)
       li 
         padding 30px 0
         flex-basis 25%
@@ -496,6 +512,7 @@ ul.temeperatures-holder
         cursor pointer
         @media screen and (min-width 1000px)
           padding 0 !important
+          display flex
         &.active
           background-color rgba(0, 0, 0, 0.05)
       &:not(:last-child) .inner-content
@@ -506,8 +523,7 @@ ul.temeperatures-holder
         @media screen and (min-width 1000px)
           flexCenter(row , space-between)
           text-align left
-          max-width 230px
-          padding 25px 0
+          width 230px
           margin 0 auto
           border-bottom 1px solid rgb(233,233,233)
         .up 
@@ -751,6 +767,41 @@ ul.temeperatures-holder
     line-height 33px
     font-size 30px
     color rgba(black , .1)
+
+
+
+.thank-you
+  position absolute
+  top -100px
+  width 400px
+  height 50px
+  color orange 
+  background rgba(white , .9)
+  flexCenter()
+  opacity 0
+  transition .2s .5s cubic-bezier(0, 0, 0.44, 0.81) all
+
+
+.subscribe.subscribed
+  .thank-you
+    top 0
+    opacity 1
+  .plane-big-icon
+    transform translate(300px,-300px)
+
+.loading-image.loading-matches-list
+  display none
+  img
+    width 50px 
+    height 50px
+  &.shown
+    flexCenter()
+    fullAbsolute()
+    background rgba(black , .5)
+    opacity 0
+    animation fadeIn .5s  linear forwards
+    z-index 10
+
 @keyframes fadeIn 
   to 
     opacity 1

@@ -3,6 +3,10 @@ const weatherController = document.querySelectorAll('.weather-controller li');
 const temepratureText = document.querySelectorAll('.temeperatures-holder li'); // MUST DO THEM WITH d3 BUT I FOUND IT EASYER LIKE THIS
 
 
+function floorRandom(max,min=0){
+  return Math.floor(Math.random() * max-min) + min
+}
+
 function debounce(func,wait=10,immediate=false){
   let timeout;
   return function(){
@@ -133,7 +137,6 @@ function updateWeatherChart(data){
     .attr('d',line)
 
 }
-
 
 
 // SMALL STOCK GRAPH
@@ -448,101 +451,199 @@ function updateBigChartInfos(name,{low,ammount,dividend,high,marketCap,open,pE})
 
 
 
-/* MATCHES */
-const matchHolders = document.querySelectorAll('li.match');
 
-const fakeMatchesData = {
-  '0' : {
-    'team1' : 'Montreal Canadiens',
-    'team2' : 'Ottawa Senators',
-    'team1-score-details' : '3-1-0',
-    'team2-score-details' : '1-3-0',
-    'scores-on-steps' : {
-      '1' : [0,0],
-      '2' : [0,0],
-      '3' : [0,0],
-      'ot' : [0,1],
-      'final' : [0,1],
-    },
-    'cup-name': 'Stanley Cup Playoffs',
-    'match-date' : 'WEDNESDAY, APRIL 22, 5:00 PM',
-    'match-place' : 'CONSOL Energy Center, Pittsburgh',
-    'match-url' : '#',
-  },
-  '1' : {
-    'team1' : 'New York Rangers',
-    'team2' : 'Pittsburgh Penguins',
-    'team1-score-details' : '1-2-0',
-    'team2-score-details' : '2-1-0',
-    'scores-on-steps' : {
-      '1' : [1,0],
-      '2' : [1,1],
-      '3' : [0,0],
-      'ot' : [0,0],
-      'final' : [2,1],
-    },
-    'cup-name': 'Fake Cup Playoffs',
-    'match-date' : 'MONDAY, NOVEMBER 23, 5:00 AM',
-    'match-place' : 'CONSOL Energy Center, Pittsburgh2',
-    'match-url' : '#',
-  },
-  '2' : {
-    'team1' : 'St. Louis Blues',
-    'team2' : 'Minnesota Wild',
-    'team1-score-details' : '3-1-0',
-    'team2-score-details' : '1-3-0',
-    'scores-on-steps' : {
-      '1' : [2,0],
-      '2' : [1,1],
-      '3' : [2,1],
-      'ot' : [1,0],
-      'final' : [6,1],
-    },
-    'cup-name': 'Stanley Cup Playoffs',
-    'match-date' : 'WEDNESDAY, APRIL 22, 5:00 PM',
-    'match-place' : 'CONSOL Energy Center, Pittsburgh',
-    'match-url' : '#',
-  },
-  '3' : {
-    'team1' : 'Anaheim Duks',
-    'team2' : 'Winnipeg Jets',
-    'team1-score-details' : '3-1-0',
-    'team2-score-details' : '1-3-0',
-    'scores-on-steps' : {
-      '1' : [0,0],
-      '2' : [4,1],
-      '3' : [0,0],
-      'ot' : [1,1],
-      'final' : [5,2],
-    },
-    'cup-name': 'Fake Cup Two',
-    'match-date' : 'TUESDAY, MARCH 13, 5:00 PM',
-    'match-place' : 'CONSOL Energy Center, Pittsburgh',
-    'match-url' : '#',
-  }
+
+
+/* MATCHES */
+let loadingMatchData = false; //flag to stop the user to press on arrows while waiting for data to come
+const matchesHolder = document.querySelector('.matches')
+const matchesArrows = document.querySelectorAll('.scores-arrows');
+const matchesLoading = document.querySelector('.loading-matches-list');
+const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const days = ['Sunday','Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday'];
+const teamsNames = [{city : 'Montreal' , name : 'Canadiens'} , {city : 'Ottawa' , name : 'Senators'}, {city : 'New York' , name : 'Rangers'}, {city : 'Pitsburg' , name : 'Penguins'}, {city : 'St Louis' , name : 'Blues'}, {city : 'Minneasota' , name : 'Wild'}, {city : 'Anaheim' , name : 'Ducks'}, {city : 'Winnipeg' , name : 'Jets'}]
+const oneDayMs = 86400000;
+let lastDateTime = new Date().getTime();
+
+
+
+matchesArrows.forEach(el => el.addEventListener('click',(e)=>{
+  if(loadingMatchData) return;
+  //loadingMatchData = true
+  lastDateTime += +el.dataset.towards * oneDayMs;
+  
+  
+
+  matchesLoading.classList.add('shown')
+  
+
+  window.setTimeout(()=>{
+    matchesLoading.classList.remove('shown')
+    updateDateTitle(lastDateTime)
+    makeMatches(floorRandom(10)) 
+  }, floorRandom(2500,1500)) // make random matches when user press on the arrow max 10
+
+}))
+
+//details data for each mach on expand
+let fakeMatchesData = {
 }
+
+const updateDateTitle = (time) => {
+  const date = new Date(time);
+  const today = new Date();
+
+  //calculate diference between today and next past day to see what to write as title
+  let dateTitle;
+  if(date.getFullYear() == today.getFullYear() && date.getMonth() == today.getMonth()){
+    const todayDate = today.getDate();
+    const dateDate = date.getDate();
+    switch(todayDate - dateDate){
+      case 0:
+        dateTitle = 'TODAY';
+        break;
+      case 1:
+        dateTitle = 'YESTERDAY';
+        break;
+      case -1:
+        dateTitle = 'TOMORROW';
+        break;
+      default :
+        dateTitle = (days[date.getDay()]).toUpperCase()
+    }
+  }else{
+    dateTitle = (days[date.getDay()]).toUpperCase()
+  }
+
+  document.querySelector('h3.scores-day').innerText = dateTitle;
+  document.querySelector('.bottom.date p').innerText = `${months[date.getMonth()]} ${date.getDate()},${date.getFullYear()}`;
+  
+}
+
+function makeMatches(n){
+  const matchesDate = new Date(lastDateTime);
+  let inAdvanced = matchesDate.getTime() > new Date().getTime()//if the match is over today, so there is no data about scores
+
+  if(n==0){ //there are no games this day
+    console.log('chiar aiic')
+    document.querySelector('.matches').innerHTML = `<li class='no-game'>No games on ${matchesDate.getDate()} ${months[matchesDate.getMonth()]}, please check the other days.</li>`
+    return;
+  }
+
+  let matchesArray = [];
+  fakeMatchesData = {};
+  for(let i = 0 ; i < n ; i ++){
+    const team1 = teamsNames[Math.floor(Math.random()*teamsNames.length)];
+    let team2 = teamsNames[Math.floor(Math.random()*teamsNames.length)];
+    while(team1 == team2) team2 = teamsNames[Math.floor(Math.random()*teamsNames.length)];
+    const teamImg = (imgLink) => `<img class='team-logo' src='images/${imgLink}' alt='team-logo'>`; //fake at the moment
+
+    let team1Goals , team2Goals;
+
+    if(inAdvanced){
+      team1Goals = '-',
+      team2Goals = '-'
+    }else{
+      team1Goals = Math.floor(Math.random()*10);
+      team2Goals = Math.floor(Math.random()*10);
+    }
+ 
+
+    
+
+    
+
+    let matchString = `<li class='match'><div class='match-basic-content'><div class='match-overlay' data-for='${i}'></div><div class='team team1'>${teamImg('t1.png')}<div class='team-name'><p>${team1.city}</p><p>${team1.name}</p></div></div>`
+        matchString+= `<div class='score'><h5>${team1Goals}<span class='points'>:</span>${team2Goals}</h5></div>`
+        matchString+= `<div class='team team2'>${teamImg('t1.png')}<div class='team-name'><p>${team2.city}</p><p>${team2.name}</p></div></div></div>`;
+        matchString+= `<div class='match-details'><div class='loading-image'><img src='images/loading.gif'></div></div></li>`;
+
+    /* populate details fake data for each match*/
+
+    const makeScoreSteps = (s1,s2) => {
+      if(inAdvanced){
+        return {
+          '1' : ['-','-'],
+          '2' : ['-','-'],
+          '3' : ['-','-'],
+          'ot' : ['-','-'],
+          'final' : ['-','-']
+        }
+      }
+      let s1copy = s1;
+      let s2copy = s2;
+      
+      let holder = {
+        '1' : [],
+        '2' : [],
+        '3' : [],
+        'ot' : [],
+        'final' : [s1,s2]
+      }
+
+      const holderSteps = Object.keys(holder);
+
+      holderSteps.forEach(el=>{
+        if(el!='final'){
+          if(el=='ot'){
+            holder[el] = [s1copy , s2copy]
+          }else{
+            const t1ThisRound = floorRandom(s1copy+1);
+            s1copy -= t1ThisRound;
+            const t2ThisRound = floorRandom(s2copy+1)
+            s2copy -= t2ThisRound;
+            holder[el] = [t1ThisRound,t2ThisRound];
+          }
+        }
+      })
+      
+      return holder;
+    }
+
+
+    fakeMatchesData[String(i)] = {
+      'team1' : `${team1.city} ${team1.name}`,
+      'team2' : `${team2.city} ${team2.name}`,
+      'team1-score-details' : `${floorRandom(5)}-${floorRandom(5)}-${floorRandom(5)}`,
+      'team2-score-details' : `${floorRandom(5)}-${floorRandom(5)}-${floorRandom(5)}`,
+      'scores-on-steps' : makeScoreSteps(team1Goals,team2Goals),
+      'cup-name' : `Stanley Cup Playoffs${i}`,
+      'match-date' : `${(days[matchesDate.getDay()]).toUpperCase()}, ${(months[matchesDate.getMonth()]).toUpperCase()} ${matchesDate.getDate()}, ${Math.ceil(Math.random()*12)}:00 PM`,
+      'match-place' : `CONSOL Energy Center, ${team1.city}`,
+      'match-url' : '#'
+    }
+    matchesArray.push(matchString);
+  }
+  
+  document.querySelector('.matches').innerHTML = matchesArray.join('');
+}
+
 
 const loaded = []
 
-matchHolders.forEach((el,id)=>el.querySelector('.match-basic-content').addEventListener('click',(e)=>{
-  if(el.classList.contains('expanded')){
-    el.classList.remove('expanded')
+matchesHolder.addEventListener('click',(e)=>{
+  const target = e.target;
+  if(!target.classList.contains('match-overlay'))return;
+  const parent = target.parentNode.parentNode;
+  
+  if(parent.classList.contains('expanded')){
+    parent.classList.remove('expanded')
   }else{
-    if(loaded.indexOf(el) < 0){ // not loaded data once
-      el.classList.add('loading');
-      loaded.push(el)
-      const matchData = matchDetailsMaker(fakeMatchesData[String(id)]);
+    if(loaded.indexOf(parent) < 0){ // not loaded data once
+      parent.classList.add('loading');
+      loaded.push(parent)
+      const matchData = matchDetailsMaker(fakeMatchesData[target.dataset.for]);
       window.setTimeout(()=>{
-        el.classList.remove('loading');
-        el.querySelector('.match-details').append(matchData)
-        window.setTimeout(()=>{el.classList.add('expanded')},200)
+        parent.classList.remove('loading');
+        parent.querySelector('.match-details').append(matchData)
+        window.setTimeout(()=>{parent.classList.add('expanded')},200)
       }, Math.ceil(Math.random()*3)*1000)
     }else{
-      el.classList.add('expanded')
+      parent.classList.add('expanded')
     } //data alredy loaded
-    
   }
-}))
+})
+
 
 function matchDetailsMaker(match){
   const steps = match['scores-on-steps'];
@@ -559,6 +660,23 @@ function matchDetailsMaker(match){
   matchDetailsContent.innerHTML = matchContent;
   return matchDetailsContent;
 }
+
+
+/* INITIAL PUSH OF MATCHES */
+makeMatches(floorRandom(5,2))
+
+
+
+
+
+/* SUBSCRIBE */
+
+const subscribeForm = document.querySelector('form.subscribe-form');
+subscribeForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  document.querySelector('.subscribe').classList.add('subscribed');
+  document.querySelector('form').value = ''
+})
 
 
 /* PAGINATION */    
@@ -584,3 +702,6 @@ function changeActiveBuble(el,idx){
     activePage = idx;
     pageBubles[idx].classList.add('active');
 }
+
+
+

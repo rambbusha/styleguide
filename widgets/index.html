@@ -112,6 +112,7 @@
           <p>Thomas Schneider</p>
         </div>
         <div class='navigation-profile-avatar'>
+            <img src='images/profile.jpg' alt='avatar'>
         </div>
       </div>
     </div>
@@ -130,13 +131,22 @@
             <use xlink:href='#logo'></use>
           </svg>
         </div>
-        <ul class='nav-bar-right'>
-          <li class='plus'>
+        <div class='nav-bar-right'>
+          <div class='plus'>
             <svg class='plus-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <use xlink:href='#plus'></use>
             </svg>
-          </li>
-        </ul>
+          </div>
+          <div class='search'>
+            <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href='#search'></use>
+            </svg>
+          </div>
+          <div class='nav-avatar'>
+            <img src='images/profile.jpg' alt='avatar'>
+          </div>
+        </div>
+        
       </div>
       <!-- REPLACE UNDER -->
       <div class='widgets'>
@@ -371,14 +381,14 @@
             </ul>
           </div>
         </div>
-        <div class='scores'>
+        <div class='scores custom-scroll'>
           <div class='scores-header'>
             <div class='top'>
-              <svg class='scores-arrows' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class='scores-arrows' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-towards='-1'>
                 <use xlink:href='#long-arrow-left'></use>
               </svg>
               <h3 class='scores-day'>TODAY</h3>
-              <svg class='scores-arrows' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <svg class='scores-arrows' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" data-towards='1'>
                 <use xlink:href='#long-arrow-right'></use>
               </svg>
             </div>
@@ -391,111 +401,11 @@
             <h4>NHL</h4>
             <div class='sport-type-line'></div>
           </div>
+          <div class='loading-image loading-matches-list'>
+            <img src='images/loading.gif'>
+          </div>
           <ul class='matches'>
-            <li class='match'>
-              <div class='match-basic-content' data-for='1'>
-                <div class='team team1'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>Montreal</p>
-                    <p>Canadiens</p>
-                  </div>
-                </div>
-                <div class='score'>
-                  <h5>0<span class='points'>:</span>1</h5>
-                </div>
-                <div class='team team2'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>Ottawa</p>
-                    <p>Senators</p>
-                  </div>
-                </div>
-              </div>
-              <div class='match-details'>
-                <div class='loading-image'>
-                  <img src='images/loading.gif'>
-                </div>
-              </div>
-            </li>
-            <li class='match'>
-              <div class='match-basic-content' data-for='1'>
-                <div class='team team1'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>New York</p>
-                    <p>Rangers</p>
-                  </div>
-                </div>
-                <div class='score'>
-                  <h5>2<span class='points'>:</span>1</h5>
-                </div>
-                <div class='team team2'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>Pittsburgh</p>
-                    <p>Penguins</p>
-                  </div>
-                </div>
-              </div>
-              <div class='match-details'>
-                <div class='loading-image'>
-                  <img src='images/loading.gif'>
-                </div>
-              </div>
-            </li>
-            <li class='match'>
-              <div class='match-basic-content' data-for='2'>
-                <div class='team team1'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>St. Louis</p>
-                    <p>Blues</p>
-                  </div>
-                </div>
-                <div class='score'>
-                  <h5>6<span class='points'>:</span>1</h5>
-                </div>
-                <div class='team team2'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>Minnesota</p>
-                    <p>Wild</p>
-                  </div>
-                </div>
-              </div>
-              <div class='match-details'>
-                <div class='loading-image'>
-                  <img src='images/loading.gif'>
-                </div>
-              </div>
-            </li>
-            <li class='match'>
-              <div class='match-basic-content' data-for='3'>
-                <div class='team team1'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>Anaheim</p>
-                    <p>Ducks</p>
-                  </div>
-                </div>
-                <div class='score'>
-                  <h5>5<span class='points'>:</span>2</h5>
-                </div>
-                <div class='team team2'>
-                  <img class='team-logo' src='images/t1.png' alt='team-logo'>
-                  <div class='team-name'>
-                    <p>Winnipeg</p>
-                    <p>Jets</p>
-                  </div>
-                </div>
-              </div>
-              <div class='match-details'>
-                <div class='loading-image'>
-                  <img src='images/loading.gif'>
-                </div>
-              </div>
-            </li>
+            
           </ul>
         </div>
         <div class='widgets-subscribe-article'>
@@ -505,8 +415,11 @@
                 <use xlink:href='#plane'></use>
               </svg>
             </div>
+            <div class='thank-you'>
+              <h2>Thank you for subscribing!</h2>
+            </div>
             <p>Get the day's top news stories delivered to your inbox.</p>
-            <form>
+            <form class='subscribe-form'>
               <div class='subscribe-email-wrapper'>
                 <label for='subscribe-email'>
                   <svg class='subscribe-svg' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

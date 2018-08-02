@@ -139,16 +139,23 @@
         <ul>
           <li class='buble active'>
             <div class='inner-buble'></div>
+            <div class='outer-buble'></div>
             <h4 class='buble-txt'>STEP 1</h4>
           </li>
-          <li class='line'></li>
+          <li class='line to-2'>
+            <div class='inner-line'></div>
+          </li>
           <li class='buble'>
             <div class='inner-buble'></div>
+            <div class='outer-buble'></div>
             <h4 class='buble-txt'>STEP 2</h4>
           </li>
-          <li class='line'></li>
+          <li class='line to-3'>
+              <div class='inner-line'></div>
+          </li>
           <li class='buble'>
             <div class='inner-buble'></div>
+            <div class='outer-buble'></div>
             <h4 class='buble-txt'>STEP 3</h4>
           </li>
         </ul>
@@ -157,24 +164,43 @@
       <div class='title'>
         <h2>CREATE ACCOUNT</h2>
       </div>
-      <form>
+      <form class='sign-up'>
         <div class='input-wrapper'>
-          <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <use xlink:href='#name-lines'></use>
-          </svg>
-          <input type='text' placeholder="Name">
+          <label for='name'>
+            <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href='#name-lines'></use>
+            </svg>
+          </label>
+          <input id='name' type='text' placeholder="Name" autocomplete="off" value='siseer'>
+          <div class='sign-up-tooltip name-tooltip'>
+            <div class='tooltip-arrow'></div>
+            <p>The name must have between 3-15 characters and contain just numbers and english letters.</p>
+          </div>
         </div>
         <div class='input-wrapper'>
-          <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <use xlink:href='#email'></use>
-          </svg>
-          <input type='email' placeholder="Email">
+          <label for='emailz'>
+              <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#email'></use>
+              </svg>
+          </label>
+          <input id='emailz' type='email' placeholder="Email" autocomplete="off" value='dragos@yahoo.com'>
+          <div class='sign-up-tooltip email-tooltip'>
+            <div class='tooltip-arrow'></div>
+            <p>The email must be valid (example1@yahoo.com), don't forget to complete it.</p>
+          </div>
         </div>
+        
         <div class='input-wrapper'>
-          <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <use xlink:href='#password'></use>
-          </svg>
-          <input type='password' placeholder="Password">
+          <label for='passwordz'>
+            <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <use xlink:href='#password'></use>
+            </svg>
+          </label>
+          <input id='passwordz' type='password' placeholder="Password" value='1234567'>
+          <div class='sign-up-tooltip password-tooltip'>
+            <div class='tooltip-arrow'></div>
+            <p>The password must have at least 5 characters, contain at least one number.It may contain just numbers, english characters and _ -</p>
+          </div>
         </div>
         <input type='submit' value='Continue'>
       </form>
@@ -190,6 +216,7 @@
   crossorigin="anonymous"></script>
   <script type='text/javascript' src='script/nav-bar.js'></script>
   <script type='text/javascript' src='script/svgs-loader.js'></script>
+  <script type='text/javascript' src='script/form-submit.js'></script>
 </body>
 
 </html>
