@@ -5,37 +5,37 @@ const fontsList = document.querySelector('.typfaces-list');
 const body = document.querySelector('body');
 const luminosityButtons = document.querySelectorAll('.luminosity div')
 
-const fonts = ['Montserrat' , 'sans-serif' , 'cursive' , 'fantasy' ,  'serif']
+const fonts = ['Montserrat', 'sans-serif', 'cursive', 'fantasy', 'serif']
 
 const toggleFontSettings = () => fontSettingsWrapper.classList.toggle('down')
 
-fontSettingsButton.forEach(el=>el.addEventListener('click',toggleFontSettings))
+fontSettingsButton.forEach(el => el.addEventListener('click', toggleFontSettings))
 
 let activeId = 0;
 
-arrows.forEach(el=>el.addEventListener('click',()=>{
-    if(!el.classList.contains('active')) return;
+arrows.forEach(el => el.addEventListener('click', () => {
+    if (!el.classList.contains('active')) return;
     let to = Number(el.dataset.to);
-    activeId+=to;
+    activeId += to;
     fontsList.style.transform = `translateX(${-154 * activeId}px)`;
     body.style.fontFamily = fonts[activeId]
-    if(activeId==0){
+    if (activeId == 0) {
         arrows[0].classList.remove('active')
-    }else if(activeId == fonts.length - 1){
+    } else if (activeId == fonts.length - 1) {
         arrows[1].classList.remove('active')
-    }else{
+    } else {
         arrows.forEach(arrow => arrow.classList.add('active'));
     }
 }))
 
-luminosityButtons.forEach(el=>el.addEventListener('click',(e) => {
-    if(el.classList.contains('active')) return;
+luminosityButtons.forEach(el => el.addEventListener('click', (e) => {
+    if (el.classList.contains('active')) return;
     const type = el.dataset.for;
     document.querySelector('.luminosity .active').classList.remove('active');
     el.classList.add('active');
-    if(type=='sun'){
+    if (type == 'sun') {
         body.style.filter = 'brightness(1)'
-    }else{
+    } else {
         body.style.filter = 'brightness(.8)'
     }
 }))

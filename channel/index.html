@@ -3,15 +3,15 @@
 
 <head>
   <title>Settings</title>
-  <meta charset="UTF-8">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type='text/css' href="style.css">
+  <link rel="stylesheet" type='text/css' media="screen" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
 <body>
-  <div class='app-wrapper'>
+  <div class='app-wrapper channel-wrapper'>
     <div class='navigation-wrapper'>
       <div class='navigation-bg'>
       </div>
@@ -111,7 +111,7 @@
           <p>Thomas Schneider</p>
         </div>
         <div class='navigation-profile-avatar'>
-          <img src='images/profile.jpg' alt='avatar'>
+          <img src='../images/profile.jpg' alt='avatar'>
         </div>
       </div>
     </div>
@@ -135,12 +135,15 @@
             </svg>
           </div>
           <div class='search'>
-            <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <use xlink:href='#search'></use>
-            </svg>
+            <input type='text' id='nav-search'>
+            <label class='search-label' for='nav-search'>
+              <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#search'></use>
+              </svg>
+            </label>
           </div>
           <div class='nav-avatar'>
-            <img src='images/profile.jpg' alt='avatar'>
+            <img src='../images/profile.jpg' alt='avatar'>
           </div>
         </div>
       </div>
@@ -154,27 +157,27 @@
             <ul class='followers-list'>
               <li class='follower'>
                 <a href='#'>
-                  <img src='images/follower1.jpg' alt='follower'>
+                  <img src='../images/follower1.jpg' alt='follower'>
                 </a>
               </li>
               <li class='follower'>
                 <a href='#'>
-                  <img src='images/follower1.jpg' alt='follower'>
+                  <img src='../images/follower1.jpg' alt='follower'>
                 </a>
               </li>
               <li class='follower'>
                 <a href='#'>
-                  <img src='images/follower1.jpg' alt='follower'>
+                  <img src='../images/follower1.jpg' alt='follower'>
                 </a>
               </li>
               <li class='follower'>
                 <a href='#'>
-                  <img src='images/follower1.jpg' alt='follower'>
+                  <img src='../images/follower1.jpg' alt='follower'>
                 </a>
               </li>
               <li class='follower'>
                 <a href='#'>
-                  <img src='images/follower1.jpg' alt='follower'>
+                  <img src='../images/follower1.jpg' alt='follower'>
                 </a>
               </li>
             </ul>
@@ -200,7 +203,7 @@
               </ul>
             </div>
             <div class='channel-card-image'>
-              <img src='images/story1.jpg' alt='story-image'>
+              <img src='../images/story1.jpg' alt='story-image'>
             </div>
           </li>
           <li class='channel-card'>
@@ -222,7 +225,7 @@
               </ul>
             </div>
             <div class='channel-card-image'>
-              <img src='images/story2.jpg' alt='story-image'>
+              <img src='../images/story2.jpg' alt='story-image'>
             </div>
           </li>
           <li class='channel-card'>
@@ -244,7 +247,7 @@
               </ul>
             </div>
             <div class='channel-card-image'>
-              <img src='images/story3.jpg' alt='story-image'>
+              <img src='../images/story3.jpg' alt='story-image'>
             </div>
           </li>
           <li class='channel-card'>
@@ -266,7 +269,7 @@
               </ul>
             </div>
             <div class='channel-card-image'>
-              <img src='images/story4.jpg' alt='story-image'>
+              <img src='../images/story4.jpg' alt='story-image'>
             </div>
           </li>
         </ul>
@@ -283,7 +286,7 @@
             </svg>
           </li>
           <li class='settings-avatar'>
-            <img src='images/profile.jpg' alt='avatar'>
+            <img src='../images/profile.jpg' alt='avatar'>
           </li>
           <li class='download up-down-icon'>
             <svg class='download' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

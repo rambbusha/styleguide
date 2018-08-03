@@ -18,33 +18,33 @@ const fillBar = (percent) => innerBar.style.width = `${percent}%`;
 
 
 //make the cards move , Mobile walkthrough
-stepCards.forEach((el,idx)=>el.addEventListener('click',(e)=>{
+stepCards.forEach((el, idx) => el.addEventListener('click', (e) => {
     let lastActiveCard = cardsHolder.querySelector('.active');
 
-    if(idx > stepCards.indexOf(lastActiveCard)){
+    if (idx > stepCards.indexOf(lastActiveCard)) {
         actualStep++
-    }else{
+    } else {
         actualStep--
     }
-    
-    if(actualStep==stepCards.length){
+
+    if (actualStep == stepCards.length) {
         doneButton.style.display = 'block'
-    }else{
+    } else {
         doneButton.style.display = 'none'
     }
 
     stepsCounterHolder.innerText = `${actualStep} of ${totalSteps}`;
     lastActiveCard.classList.remove('active');
-    fillBar(Math.round((actualStep-1)/(totalSteps-1)*100))
-    console.log(Math.round((actualStep-1)/(totalSteps-1)*100))
-    
+    fillBar(Math.round((actualStep - 1) / (totalSteps - 1) * 100))
+    console.log(Math.round((actualStep - 1) / (totalSteps - 1) * 100))
+
     stepCards[idx].classList.add('active');
-    cardsHolder.style.transform = `translateX(-${85 * idx + 5 * idx }px)`;
+    cardsHolder.style.transform = `translateX(-${85 * idx + 5 * idx}px)`;
 }))
 
-doneButton.addEventListener('click' , () => {
+doneButton.addEventListener('click', () => {
     mobileWalk.classList.add('hidden');
-    window.setTimeout(()=>mobileWalk.style.display='none' , 400)
+    window.setTimeout(() => mobileWalk.style.display = 'none', 400)
 })
 
 
@@ -53,25 +53,25 @@ doneButton.addEventListener('click' , () => {
 
 //tablets walkthrough
 tooltips[0].classList.add('active');
-tooltipButtons.forEach((el,idx)=>el.addEventListener('click',(e)=>{
+tooltipButtons.forEach((el, idx) => el.addEventListener('click', (e) => {
     const action = el.dataset.for;
     const activeTooltip = document.querySelector('.tooltip.active');
     const activeId = tooltips.indexOf(activeTooltip);
-    if(action=='next'){
+    if (action == 'next') {
         activeTooltip.classList.remove('active')
-        const nextItem = tooltips[activeId+1];
+        const nextItem = tooltips[activeId + 1];
         const distanceFromTop = nextItem.parentElement.offsetTop + nextItem.offsetTop;
-        if(distanceFromTop > window.innerHeight/2){
+        if (distanceFromTop > window.innerHeight / 2) {
             window.scrollTo({
-                top: distanceFromTop/2,
+                top: distanceFromTop / 2,
                 behavior: "smooth"
             });
         }
         nextItem.classList.add('active')
-    }else if(action=='prev'){
+    } else if (action == 'prev') {
         activeTooltip.classList.remove('active')
-        tooltips[activeId-1].classList.add('active')
-    }else{
-        tooltips.forEach(item=>item.style.display='none')
+        tooltips[activeId - 1].classList.add('active')
+    } else {
+        tooltips.forEach(item => item.style.display = 'none')
     }
 }))

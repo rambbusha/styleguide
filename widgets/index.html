@@ -3,10 +3,10 @@
 
 <head>
   <title>Widgets</title>
-  <meta charset="UTF-8">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type='text/css' href="style.css">
+  <link rel="stylesheet" type='text/css' media="screen" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
@@ -112,7 +112,7 @@
           <p>Thomas Schneider</p>
         </div>
         <div class='navigation-profile-avatar'>
-            <img src='images/profile.jpg' alt='avatar'>
+          <img src='../images/profile.jpg' alt='avatar'>
         </div>
       </div>
     </div>
@@ -138,15 +138,18 @@
             </svg>
           </div>
           <div class='search'>
-            <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <use xlink:href='#search'></use>
-            </svg>
+            <input type='text' id='nav-search'>
+            <label class='search-label' for='nav-search'>
+              <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#search'></use>
+              </svg>
+            </label>
           </div>
           <div class='nav-avatar'>
-            <img src='images/profile.jpg' alt='avatar'>
+            <img src='../images/profile.jpg' alt='avatar'>
           </div>
         </div>
-        
+
       </div>
       <!-- REPLACE UNDER -->
       <div class='widgets'>
@@ -179,31 +182,45 @@
             <svg class='weather-chart'></svg>
             <ul class='temeperatures-holder'>
               <li>
-                <h2>65<span>o</span></h2>
+                <h2>65
+                  <span>o</span>
+                </h2>
                 <p>8 AM</p>
               </li>
               <li>
-                <h2>86<span>o</span></h2>
+                <h2>86
+                  <span>o</span>
+                </h2>
                 <p>12 PM</p>
               </li>
               <li>
-                <h2>79<span>o</span></h2>
+                <h2>79
+                  <span>o</span>
+                </h2>
                 <p>4 PM</p>
               </li>
               <li>
-                <h2>62<span>o</span></h2>
+                <h2>62
+                  <span>o</span>
+                </h2>
                 <p>8 PM</p>
               </li>
               <li>
-                <h2>59<span>o</span></h2>
+                <h2>59
+                  <span>o</span>
+                </h2>
                 <p>12 AM</p>
               </li>
               <li>
-                <h2>57<span>o</span></h2>
+                <h2>57
+                  <span>o</span>
+                </h2>
                 <p>1 PM</p>
               </li>
               <li>
-                <h2>55<span>o</span></h2>
+                <h2>55
+                  <span>o</span>
+                </h2>
                 <p>10 PM</p>
               </li>
             </ul>
@@ -322,11 +339,11 @@
                   <li>
                     <p class='low-opac'>Dividend yield</p>
                     <p>1.63%</p>
-                  </li>  
+                  </li>
                   <li>
                     <p class='low-opac'>P/E ratio (ttm)</p>
                     <p>15.73</p>
-                  </li>                 
+                  </li>
                 </ul>
                 <div class='points'>
                   <span></span>
@@ -402,10 +419,10 @@
             <div class='sport-type-line'></div>
           </div>
           <div class='loading-image loading-matches-list'>
-            <img src='images/loading.gif'>
+            <img src='../images/loading.gif'>
           </div>
           <ul class='matches'>
-            
+
           </ul>
         </div>
         <div class='widgets-subscribe-article'>

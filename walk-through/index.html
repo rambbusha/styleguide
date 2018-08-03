@@ -3,10 +3,10 @@
 
 <head>
   <title>walk-through</title>
-  <meta charset="UTF-8">
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type='text/css' href="style.css">
+  <link rel="stylesheet" type='text/css' media="screen" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 </head>
 
@@ -62,7 +62,9 @@
         </div>
       </div>
     </div>
-    <div class='done-button'><p>Done</p></div>
+    <div class='done-button'>
+      <p>Done</p>
+    </div>
   </div>
   <div class='app-wrapper'>
     <div class='navigation-wrapper'>
@@ -164,7 +166,7 @@
           <p>Thomas Schneider</p>
         </div>
         <div class='navigation-profile-avatar'>
-          <img src='images/profile.jpg' alt='avatar'>
+          <img src='../images/profile.jpg' alt='avatar'>
         </div>
       </div>
     </div>
@@ -203,31 +205,34 @@
         </div>
         <div class='nav-bar-right'>
           <div class='search'>
-            <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <use xlink:href='#search'></use>
-            </svg>
+            <input type='text' id='nav-search'>
+            <label class='search-label' for='nav-search'>
+              <svg class='search' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#search'></use>
+              </svg>
+            </label>
           </div>
           <div class='nav-avatar'>
-            <img src='images/profile.jpg' alt='avatar'>
+            <img src='../images/profile.jpg' alt='avatar'>
             <!-- TOOLTIP -->
             <div class='tooltip'>
-                <div class='double-circle'>
-                  <span class='circle'></span>
-                  <span class='circle'></span>
-                </div>
-                <div class='tooltip-icon'>
-                  <svg class='logo' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href='#profile'></use>
-                  </svg>
-                </div>
-                <div class='tip'>
-                  <p>Always have an access  to your profile</p>
-                </div>
-                <div class='controlls'>
-                  <a data-for='prev' class='tooltip-btn' href='#'>BACK</a>
-                  <a data-for='next' class='tooltip-btn' href='#'>NEXT</a>
-                </div>
+              <div class='double-circle'>
+                <span class='circle'></span>
+                <span class='circle'></span>
               </div>
+              <div class='tooltip-icon'>
+                <svg class='logo' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href='#profile'></use>
+                </svg>
+              </div>
+              <div class='tip'>
+                <p>Always have an access to your profile</p>
+              </div>
+              <div class='controlls'>
+                <a data-for='prev' class='tooltip-btn' href='#'>BACK</a>
+                <a data-for='next' class='tooltip-btn' href='#'>NEXT</a>
+              </div>
+            </div>
           </div>
           <div class='bookmarks'>
             <svg class='bookmarks-logo' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -262,49 +267,49 @@
             </ul>
           </div>
           <ul class='sharing-options'>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#message"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#bookmarks"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#share"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#message"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#bookmarks"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#share"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class='article'>
-           <!-- TOOLTIP -->
-           <div class='tooltip'>
-              <div class='double-circle'>
-                <span class='circle'></span>
-                <span class='circle'></span>
-              </div>
-              <div class='tooltip-icon'>
-                <svg class='logo' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                  <use xlink:href='#swipe'></use>
-                </svg>
-              </div>
-              <div class='tip'>
-                <p>Always have an access  to your profile</p>
-              </div>
-              <div class='controlls'>
-                <a data-for='prev' class='tooltip-btn' href='#'>BACK</a>
-                <a data-for='done' class='tooltip-btn' href='#'>DONE</a>
-              </div>
+          <!-- TOOLTIP -->
+          <div class='tooltip'>
+            <div class='double-circle'>
+              <span class='circle'></span>
+              <span class='circle'></span>
             </div>
+            <div class='tooltip-icon'>
+              <svg class='logo' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#swipe'></use>
+              </svg>
+            </div>
+            <div class='tip'>
+              <p>Always have an access to your profile</p>
+            </div>
+            <div class='controlls'>
+              <a data-for='prev' class='tooltip-btn' href='#'>BACK</a>
+              <a data-for='done' class='tooltip-btn' href='#'>DONE</a>
+            </div>
+          </div>
           <div class='article-bg'></div>
           <div class='article-infos'>
             <h2 class='article-title'>Arctic sea ice extent hits record low for winter maximum</h2>
@@ -327,28 +332,28 @@
             </ul>
           </div>
           <ul class='sharing-options'>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#message"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#bookmarks"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#share"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#message"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#bookmarks"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#share"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class='article'>
           <div class='article-bg'></div>
@@ -373,28 +378,28 @@
             </ul>
           </div>
           <ul class='sharing-options'>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#message"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#bookmarks"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#share"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#message"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#bookmarks"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#share"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </li>
         <li class='article'>
           <div class='article-bg'></div>
@@ -419,28 +424,28 @@
             </ul>
           </div>
           <ul class='sharing-options'>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#message"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#bookmarks"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <use xlink:href="#share"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#message"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#bookmarks"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href='#'>
+                <svg class="sharing-options-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href="#share"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
       <!-- REPLACE ON TOP -->
@@ -451,7 +456,7 @@
   <script type='text/javascript' src='script/nav-bar.js'></script>
   <script type='text/javascript' src='script/svgs-loader.js'></script>
   <script type='text/javascript' src='script/walk-through.js'></script>
- 
+
 </body>
 
 </html>
