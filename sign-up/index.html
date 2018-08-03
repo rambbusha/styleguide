@@ -169,6 +169,10 @@
             <h2>CREATE ACCOUNT</h2>
           </div>
           <form class='sign-up'>
+            <div class='sign-up-tooltip main-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>Something went wrong, try again and make sure all the data is correct!</p>
+            </div>
             <div class='input-wrapper'>
               <label for='name'>
                 <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -187,7 +191,7 @@
                   <use xlink:href='#email'></use>
                 </svg>
               </label>
-              <input id='emailz' type='email' placeholder="Email" autocomplete="off" >
+              <input id='emailz' type='email' placeholder="Email" autocomplete="off" value='d@yahoo.com'>
               <div class='sign-up-tooltip email-tooltip'>
                 <div class='tooltip-arrow'></div>
                 <p>The email must be valid (example1@yahoo.com), don't forget to complete it.</p>
@@ -218,6 +222,11 @@
                 <div class='loading'>
                   <img src='../images/loading.gif' alt='Loading...'>
                 </div>
+                <div class='fail'>
+                  <svg class='fail-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href='#x'></use>
+                  </svg>
+                </div>
               </div>
             </div>
           </form>
@@ -227,6 +236,10 @@
             <h2>VERIFY YOUR EMAIL</h2>
           </div>
           <form class='verify-email'>
+            <div class='sign-up-tooltip main-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>Something went wrong, try again and make sure all the data is correct!</p>
+            </div>
             <div class='input-wrapper'>
               <label for='secret-code'>
                 <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -250,7 +263,11 @@
                 <div class='loading'>
                   <img src='../images/loading.gif' alt='Loading...'>
                 </div>
-
+                <div class='fail'>
+                  <svg class='fail-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href='#x'></use>
+                  </svg>
+                </div>
               </div>
             </div>
           </form>
@@ -260,6 +277,10 @@
             <h2>VERIFY EMAIL 2</h2>
           </div>
           <form class='verify-email2'>
+            <div class='sign-up-tooltip main-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>Something went wrong, try again and make sure all the data is correct!</p>
+            </div>
             <div class='input-wrapper'>
               <label for='secret-code2'>
                 <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -294,6 +315,11 @@
                 </div>
                 <div class='loading'>
                   <img src='../images/loading.gif' alt='Loading...'>
+                </div>
+                <div class='fail'>
+                  <svg class='fail-icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <use xlink:href='#x'></use>
+                  </svg>
                 </div>
               </div>
             </div>

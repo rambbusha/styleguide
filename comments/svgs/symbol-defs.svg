@@ -1,0 +1,231 @@
+<svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="name-lines" viewBox="0 0 50 50">
+    <title>name</title>
+      <g>
+        <path d="M0 1H38" transform="translate(6 31)" stroke-width="2" stroke-linecap="square"/>
+        <path d="M0 1H26" transform="translate(6 18)" stroke-width="2" stroke-linecap="square"/>
+      </g>
+    </symbol>
+    <symbol id="password" viewBox="0 0 50 50">
+      <title>password</title>
+      <g>
+        <path d="M1 20C1 9.50659 9.50659 1 20 1C30.4934 1 39 9.50659 39 20C39 30.4934 30.4934 39 20 39C9.50659 39 1 30.4934 1 20Z" transform="translate(5 11)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9 5C9 7.20914 7.20914 9 5 9C2.79086 9 1 7.20914 1 5C1 2.79086 2.79086 1 5 1C7.20914 1 9 2.79086 9 5Z" transform="translate(20 26)" stroke-width="2"/>
+        <path d="M0 13V9.77941C0 4.38704 4.486 0 10 0C15.514 0 20 4.38704 20 9.77941V13" transform="translate(15 1)"  stroke-width="2"/>
+      </g>
+    </symbol>
+    <symbol id="email" viewBox="0 0 50 50">
+      <title>email</title>
+      <g>
+        <path d="M1 4C1 2.34315 2.34315 1 4 1H36C37.6569 1 39 2.34315 39 4V30C39 31.6569 37.6569 33 36 33H4C2.34315 33 1 31.6569 1 30V4Z" transform="translate(5 8)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M35 0L17.5001 18L0 0" transform="translate(8 9)"  stroke-width="2"/>
+      </g>
+    </symbol>
+    <symbol id="logo" viewBox="0 0 45 45">
+      <title>logo</title>
+      <g>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 38.0253C10 40.7728 7.75581 43 5 43C2.23858 43 0 40.7787 0 38.0253L0 4.97465C0 2.22723 2.2442 0 5 0C7.76142 0 10 2.22132 10 4.97465V38.0253Z" transform="translate(43.8572 43.7607) rotate(-180)" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 38.0253C10 40.7728 7.75581 43 5 43C2.23858 43 0 40.7787 0 38.0253L0 4.97465C0 2.22723 2.2442 0 5 0C7.76142 0 10 2.22132 10 4.97465V38.0253Z" transform="translate(43.8572 43.7607) rotate(-180)" fill="url(#paint0_linear)"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 2.23858 2.23858 0 5 0C7.76142 0 10 2.23858 10 5V38C10 40.7614 7.76142 43 5 43C2.23858 43 0 40.7614 0 38V5Z" transform="translate(1 1.26001)" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 5C0 2.23858 2.23858 0 5 0C7.76142 0 10 2.23858 10 5V38C10 40.7614 7.76142 43 5 43C2.23858 43 0 40.7614 0 38V5Z" transform="translate(1 1.26001)" fill="url(#paint1_linear)"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M42 34C43.4862 35.6022 43.4848 38.684 42 41C39.6041 42.4739 36.4578 42.4767 35 41L1 8C-0.486151 6.39784 -0.484848 3.31598 1 1C3.39588 -0.473878 6.54215 -0.476701 8 1L42 34Z" transform="translate(1 1.26001)" fill="white"/>
+        <defs>
+        <linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(4.92857 20.2977) scale(4.70762 20.2977) rotate(-90)">
+        <stop stop-color="white" stop-opacity="0.5"/>
+        <stop offset="1" stop-opacity="0.3"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(5 20.5361) scale(4.77584 20.5361) rotate(-90)">
+        <stop stop-color="white" stop-opacity="0.5"/>
+        <stop offset="1" stop-opacity="0.3"/>
+        </linearGradient>
+        </defs>
+      </g>
+    </symbol>
+    <symbol id="news" viewBox="0 0 50 50">
+      <title>news</title>
+      <g>
+        <path d="M1 1H7.51064V7.83889H1V1Z" transform="translate(4 7)"  stroke-width="2"/>
+        <path d="M1 1H7.51064V7.83889H1V1Z" transform="translate(4 21.0601)"  stroke-width="2"/>
+        <path d="M1 1H7.51064V7.83889H1V1Z" transform="translate(4 35.1611)"  stroke-width="2"/>
+        <path d="M0 1H26" transform="translate(19.3191 11.3032)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 1H26" transform="translate(19.3191 25.3633)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 1H26" transform="translate(19.3191 38.5806)"  stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </symbol>
+    <symbol id="channels" viewBox="0 0 50 50">
+      <title>channels</title>
+      <g>
+        <mask id="path-1-inside-1" fill="white">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M14 7C14 10.8662 10.866 14 7 14C3.13403 14 0 10.8662 0 7C0 3.13379 3.13403 0 7 0C10.866 0 14 3.13379 14 7ZM36 7C36 10.8662 32.866 14 29 14C25.134 14 22 10.8662 22 7C22 3.13379 25.134 0 29 0C32.866 0 36 3.13379 36 7ZM7 36C10.866 36 14 32.8662 14 29C14 25.1338 10.866 22 7 22C3.13403 22 0 25.1338 0 29C0 32.8662 3.13403 36 7 36ZM36 29C36 32.8662 32.866 36 29 36C25.134 36 22 32.8662 22 29C22 25.1338 25.134 22 29 22C32.866 22 36 25.1338 36 29Z"/>
+        </mask>
+        <path d="M7 16C11.9705 16 16 11.9708 16 7H12C12 9.7616 9.76144 12 7 12V16ZM-2 7C-2 11.9708 2.02951 16 7 16V12C4.23856 12 2 9.7616 2 7H-2ZM7 -2C2.02951 -2 -2 2.02917 -2 7H2C2 4.2384 4.23856 2 7 2V-2ZM16 7C16 2.02917 11.9705 -2 7 -2V2C9.76144 2 12 4.2384 12 7H16ZM29 16C33.9705 16 38 11.9708 38 7H34C34 9.7616 31.7614 12 29 12V16ZM20 7C20 11.9708 24.0295 16 29 16V12C26.2386 12 24 9.7616 24 7H20ZM29 -2C24.0295 -2 20 2.02917 20 7H24C24 4.2384 26.2386 2 29 2V-2ZM38 7C38 2.02917 33.9705 -2 29 -2V2C31.7614 2 34 4.2384 34 7H38ZM12 29C12 31.7616 9.76144 34 7 34V38C11.9705 38 16 33.9708 16 29H12ZM7 24C9.76144 24 12 26.2384 12 29H16C16 24.0292 11.9705 20 7 20V24ZM2 29C2 26.2384 4.23856 24 7 24V20C2.02951 20 -2 24.0292 -2 29H2ZM7 34C4.23856 34 2 31.7616 2 29H-2C-2 33.9708 2.02951 38 7 38V34ZM29 38C33.9705 38 38 33.9708 38 29H34C34 31.7616 31.7614 34 29 34V38ZM20 29C20 33.9708 24.0295 38 29 38V34C26.2386 34 24 31.7616 24 29H20ZM29 20C24.0295 20 20 24.0292 20 29H24C24 26.2384 26.2386 24 29 24V20ZM38 29C38 24.0292 33.9705 20 29 20V24C31.7614 24 34 26.2384 34 29H38Z" transform="translate(7 7)" mask="url(#path-1-inside-1)"/>
+      </g>
+    </symbol>
+    <symbol id="bookmarks" viewBox="0 0 50 50">
+      <title>bookmarks</title>
+      <g>
+        <path d="M20.536 30.1142L1 40.3473V1H41V40.3473L21.464 30.1142C21.1734 29.9619 20.8266 29.9619 20.536 30.1142Z" transform="translate(4 4)"  stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+        <path d="M0 1H16" transform="translate(17 14)"  stroke-width="2" stroke-linecap="square"/>
+      </g>
+    </symbol>
+    <symbol id="overview" viewBox="0 0 50 50">
+      <title>overview</title>
+      <g>
+        <path d="M43 22C43 33.598 33.598 43 22 43C10.402 43 1 33.598 1 22C1 10.402 10.402 1 22 1C33.598 1 43 10.402 43 22Z" transform="translate(3 3)"  stroke-width="2"/>
+        <path d="M22 22H0V0" transform="translate(25 4.1001)"  stroke-width="2"/>
+        <path d="M0 0L13.8486 12.8486" transform="translate(25 27.1001)"  stroke-width="2" stroke-linecap="square"/>
+      </g>
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 50 50">
+      <title>calendar</title>
+      <g>
+        <path d="M1 2C1 1.44772 1.44772 1 2 1H42C42.5523 1 43 1.44772 43 2V42C43 42.5523 42.5523 43 42 43H2C1.44772 43 1 42.5523 1 42V2Z" transform="translate(3 3)"  stroke-width="2"/>
+        <path d="M0 0.5H24.7704" transform="translate(12.4814 12.7778)"  stroke-width="2" stroke-linecap="square"/>
+        <path d="M1 3.5C1 2.11929 2.11929 1 3.5 1C4.88071 1 6 2.11929 6 3.5C6 4.88071 4.88071 6 3.5 6C2.11929 6 1 4.88071 1 3.5Z" transform="translate(10.6333 21)"  stroke-width="2"/>
+        <path d="M1 3.5C1 2.11929 2.11929 1 3.5 1C4.88071 1 6 2.11929 6 3.5C6 4.88071 4.88071 6 3.5 6C2.11929 6 1 4.88071 1 3.5Z" transform="translate(21.6333 21)"  stroke-width="2"/>
+        <path d="M1 3.5C1 2.11929 2.11929 1 3.5 1C4.88071 1 6 2.11929 6 3.5C6 4.88071 4.88071 6 3.5 6C2.11929 6 1 4.88071 1 3.5Z" transform="translate(32.6333 21)"  stroke-width="2"/>
+        <path d="M1 3.5C1 2.11929 2.11929 1 3.5 1C4.88071 1 6 2.11929 6 3.5C6 4.88071 4.88071 6 3.5 6C2.11929 6 1 4.88071 1 3.5Z" transform="translate(10.6333 31.9165)"  stroke-width="2"/>
+        <path d="M1 3.5C1 2.11929 2.11929 1 3.5 1C4.88071 1 6 2.11929 6 3.5C6 4.88071 4.88071 6 3.5 6C2.11929 6 1 4.88071 1 3.5Z" transform="translate(21.6333 31.9165)"  stroke-width="2"/>
+        <path d="M1 3.5C1 2.11929 2.11929 1 3.5 1C4.88071 1 6 2.11929 6 3.5C6 4.88071 4.88071 6 3.5 6C2.11929 6 1 4.88071 1 3.5Z" transform="translate(33 31.9165)"  stroke-width="2"/>
+      </g>
+    </symbol>
+    <symbol id="timeline" viewBox="0 0 50 50">
+      <title>timeline</title>
+      <g>
+        <path d="M30.0277 0.85797C37.7858 4.10857 43.228 11.7165 43.228 20.5874C43.228 32.4133 33.5508 42.0006 21.614 42.0006C9.67719 42.0006 0 32.4133 0 20.5874C0 10.8113 6.61316 2.565 15.6491 0" transform="translate(3.10522 3.20654)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 13.7244V0H13.8503" transform="translate(32.4885 2.22754)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M12.5403 14.2634H0V0" transform="translate(22.4419 12.2324)"  stroke-width="2" stroke-linecap="round"/>
+       </g>
+    </symbol>
+    <symbol id="profile" viewBox="0 0 50 50">
+      <title>profile</title>
+      <g>
+        <path d="M43 22C43 33.598 33.598 43 22 43C10.402 43 1 33.598 1 22C1 10.402 10.402 1 22 1C33.598 1 43 10.402 43 22Z" transform="translate(3 3)"  stroke-width="2"/>
+        <path d="M12.95 6.98328C12.95 10.2729 10.2578 12.9666 6.975 12.9666C3.69215 12.9666 1 10.2729 1 6.98328C1 3.69364 3.69215 1 6.975 1C10.2578 1 12.95 3.69364 12.95 6.98328Z" transform="translate(18 14)"  stroke-width="2"/>
+        <path d="M1 7.95318H31C31 6.97432 30.5254 6.05402 29.5803 5.17981C28.6268 4.29782 27.2572 3.52723 25.6567 2.89314C22.4547 1.62463 18.5803 1 16 1C13.4197 1 9.5453 1.62463 6.34331 2.89314C4.74275 3.52723 3.37317 4.29782 2.41966 5.17981C1.47456 6.05402 1 6.97432 1 7.95318Z" transform="translate(9 31)"  stroke-width="2"/>
+      </g>
+    </symbol>
+    <symbol id="widgets" viewBox="0 0 50 50">
+      <title>widgets</title>
+      <g>
+        <path d="M45 23C45 35.1503 35.1503 45 23 45C10.8497 45 1 35.1503 1 23C1 10.8497 10.8497 1 23 1C35.1503 1 45 10.8497 45 23Z" transform="translate(2 1)"  stroke-width="2"/>
+        <path d="M28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14" transform="translate(11 10)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M8 4.5C8 6.433 6.433 8 4.5 8C2.567 8 1 6.433 1 4.5C1 2.567 2.567 1 4.5 1C6.433 1 8 2.567 8 4.5Z" transform="translate(25.2324 24.0249) rotate(45)"  stroke-width="2"/>
+        <path d="M2 5.8V0.136079" transform="translate(31.0461 22.0396) rotate(45)"  stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </symbol>
+    <symbol id="settings" viewBox="0 0 50 50">
+      <title>settings</title>
+      <g>
+        <path d="M13.5571 42L1.16865 21.988L13.5706 1H36.4294L48.8313 21.988L36.4429 42H13.5571Z" transform="translate(0 4)"  stroke-width="2"/>
+        <path d="M13 7C13 10.3137 10.3137 13 7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7Z" transform="translate(18 19)"  stroke-width="2"/>
+      </g>
+    </symbol>
+    <symbol id="source" viewBox="0 0 50 50">
+      <title>source</title>
+      <g>
+        <path d="M0 20C5.33333 14.4772 5.33333 5.52285 0 0" transform="translate(16 15)"  stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 30C8 21.7157 8 8.28427 0 0" transform="translate(30 10)"  stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </symbol>
+    <symbol id="time" viewBox="0 0 50 50">
+      <title>time</title>
+      <g>
+        <path d="M15 29C7.26791 29 1 22.7341 1 15C1 7.27005 7.26809 1 15 1C22.7319 1 29 7.27005 29 15C29 22.7341 22.7321 29 15 29Z" transform="translate(10 10)"  stroke-width="2"/>
+        <path d="M8 10H0V0" transform="translate(24 17)" stroke-width="2"/>  
+      </g>
+    </symbol>
+    <symbol id="search" viewBox="0 0 50 50">
+      <title>search</title>
+      <g>
+        <path d="M41 21C41 32.0457 32.0457 41 21 41C9.9543 41 1 32.0457 1 21C1 9.9543 9.9543 1 21 1C32.0457 1 41 9.9543 41 21Z" transform="translate(42) scale(-1 1)"  stroke-width="2"/>
+        <path d="M6.18466 0L0 6.18466" transform="translate(41.1846 37) scale(-1 1)"  stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </symbol>
+    <symbol id="menu" viewBox="0 0 50 50">
+      <title>menu</title>
+      <path d="M0 1H40" transform="translate(5 40)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M0 1H30" transform="translate(5 24)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M0 1H40" transform="translate(5 8)"  stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="swipe" viewBox="0 0 50 50">
+      <title>swipe</title>    
+      <path d="M17 9C17 13.4183 13.4183 17 9 17C4.58172 17 1 13.4183 1 9C1 4.58172 4.58172 1 9 1C13.4183 1 17 4.58172 17 9Z" transform="translate(29 16.1046)" stroke-width="2"/>
+      <path d="M0 1H15" transform="translate(6 24)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M14 14H0V0" transform="translate(13.8995 15.1046) rotate(45)"  stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="aa" viewBox="0 0 54 45">
+      <title>aA</title>    
+      <path d="M17 0H12.782C11.1629 0 9.59713 0.114034 8.08459 0.342105C6.57205 0.570177 5.20865 0.957892 3.99436 1.50526C2.78007 2.05263 1.81078 2.78245 1.08647 3.69474C0.362152 4.60702 0 5.74736 0 7.11579C0 8.07369 0.202379 8.92894 0.607143 9.68158C1.01191 10.4342 1.53383 11.05 2.17293 11.5289C2.81203 12.0079 3.52569 12.3728 4.31391 12.6237C5.10213 12.8746 5.901 13 6.71053 13C8.75565 13 10.4386 12.6807 11.7594 12.0421C13.0802 11.4035 14.1347 10.5711 14.9229 9.54474C15.7112 8.51842 16.2544 7.35527 16.5526 6.05526" transform="translate(35.5 25)"  stroke-width="2"/>
+      <path d="M0 2.75754C0.9154 1.8525 2.0527 1.16665 3.41193 0.699991C4.77116 0.233328 6.07489 0 7.32316 0C9.65327 0 11.5118 0.558573 12.8988 1.67574C14.2857 2.7929 14.9792 4.59589 14.9792 7.08475V11.8786C14.9792 12.8402 15 20 15 20" transform="translate(37.5 17)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M0.4 1H19.2043" transform="translate(6.5 27)"  stroke-width="2" stroke-linecap="square"/>
+      <path d="M28 34L14.7231 0L0 34" transform="translate(2.5 4)"  stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+    </symbol>
+    <symbol id="share" viewBox="0 0 50 50">
+      <title>share</title>    
+      <path d="M30 30H0V0" transform="translate(43.5 37) rotate(-180)"  stroke-width="2" stroke-linecap="round"/>
+      <path d="M36.5 0.5L0.486114 36.5139" transform="translate(6.5 6)"  stroke-width="2" stroke-linecap="square"/>
+    </symbol>
+    <symbol id="arrow-back" viewBox="0 0 12 21">
+      <title>arrow-back</title>    
+      <path d="M10.5 19.5L0 9.5L10.5 0" transform="translate(1 20.5) scale(1 -1)" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="message" viewBox="0 0 20 21">
+      <title>message</title>    
+      <path d="M0 0.5H4.58701" transform="translate(5.59998 9.20001)"  stroke-linecap="square"/>
+      <path d="M0 0.5H8.40952" transform="translate(5.59998 5.20001)"  stroke-linecap="square"/>
+      <path d="M7.2 14.2427H0.5V0.5H17.1V14.2427H13.2C12.9239 14.2427 12.7 14.4665 12.7 14.7427V17.2356C12.7 17.475 12.4334 17.6179 12.234 17.4855L7.4766 14.3262C7.39463 14.2717 7.29841 14.2427 7.2 14.2427Z" transform="translate(0.799988 1.20001)"  stroke-linecap="square" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="sun" viewBox="0 0 25 26">
+      <title>sun</title>    
+      <path d="M8.21023 4.288C8.21023 6.37276 6.49158 8.076 4.35511 8.076C2.21864 8.076 0.5 6.37276 0.5 4.288C0.5 2.20324 2.21864 0.5 4.35511 0.5C6.49158 0.5 8.21023 2.20324 8.21023 4.288Z" transform="translate(8.71249 8.92365)" />
+      <path d="M0.5 3.46725V0.137074" transform="translate(12.5 2.66751)"  stroke-linecap="square"/>
+      <path d="M0.5 3.46725V0.137074" transform="translate(12.5 20.1545)"  stroke-linecap="square"/>
+      <path d="M0.0905357 3.46725V0.137074" transform="translate(23.309 12.72) rotate(90)"  stroke-linecap="square"/>
+      <path d="M0.0905357 3.46725V0.137074" transform="translate(5.30902 12.72) rotate(90)"  stroke-linecap="square"/>
+      <path d="M0.128037 3.46725V0.137074" transform="translate(19.9256 5.40472) rotate(45)"  stroke-linecap="square"/>
+      <path d="M0.128037 3.46725V0.137074" transform="translate(7.4256 17.7699) rotate(45)"  stroke-linecap="square"/>
+      <path d="M0.128037 3.46725V0.137074" transform="translate(20.6327 20.3282) rotate(135)"  stroke-linecap="square"/>
+      <path d="M0.128037 3.46725V0.137074" transform="translate(8.13272 7.96301) rotate(135)"  stroke-linecap="square"/>
+    </symbol>
+    <symbol id="moon" viewBox="0 0 15 20">
+      <title>moon</title>    
+      <path d="M0.020087 8.86851C0.520087 0.488254 8.3534 -0.798163 12.5201 0.368504C4.52009 7.8685 8.52009 15.4883 12.5201 17.3685C7.68673 19.5352 -0.457309 16.8699 0.020087 8.86851Z" transform="translate(0.979919 1.01175)" />
+    </symbol>
+    <symbol id="capital-a" viewBox="0 0 16 19">
+      <title>capital-a</title>    
+      <path d="M0.2 0.5H9.60213" transform="translate(3 12.5)"  stroke-linecap="square"/>
+      <path d="M14 17L7.36154 0L0 17" transform="translate(1 1)"  stroke-linecap="round" stroke-linejoin="bevel"/>
+    </symbol>
+    <symbol id="play" viewBox="0 0 17 24">
+      <title>play</title>    
+      <path d="M0 21V0L14.5 10.5L0 21Z" transform="translate(1 1.5)" />
+    </symbol>
+    <symbol id="hearth" viewBox="0 0 30 29">
+      <title>hearth</title>    
+      <path d="M14.0942 5.1012L15.0011 7.03938L15.9061 5.10039C17.1949 2.33951 19.9307 1 21.9231 1C23.8316 1 25.5972 1.62235 26.8751 2.79734C28.1387 3.95923 29 5.72891 29 8.18548C29 10.306 28.1662 12.5528 26.821 14.7794C25.4809 16.9977 23.677 19.1237 21.8433 20.9827C20.0128 22.8385 18.1744 24.4064 16.7841 25.5102C16.0895 26.0617 15.5097 26.495 15.1026 26.7881C15.0543 26.8229 15.0086 26.8555 14.9656 26.8861C14.9297 26.8637 14.892 26.84 14.8526 26.815C14.4488 26.5595 13.8725 26.1787 13.1816 25.6861C11.7982 24.6997 9.96771 23.2738 8.14494 21.5167C4.45217 17.9568 1 13.238 1 8.18548C1 3.70589 4.38518 1.0818 8.07012 1.00035C10.1918 1.07771 12.8364 2.41274 14.0942 5.1012Z" transform="translate(0 0.467773)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="arrow-forward" viewBox="0 0 12 21">
+      <title>arrow-forward</title>    
+      <path d="M10.5 19.5L0 9.5L10.5 0" transform="translate(11 20.5) rotate(-180)" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="clock" viewBox="0 0 30 30">
+      <title>clock</title>    
+      <path d="M15 29C7.26791 29 1 22.7341 1 15C1 7.27005 7.26809 1 15 1C22.7319 1 29 7.27005 29 15C29 22.7341 22.7321 29 15 29Z"  stroke-width="2"/>
+      <path d="M8 10H0V0" transform="translate(14 7)" stroke-width="2"/>
+    </symbol>
+    <symbol id="full-arrow-forward" viewBox="0 0 50 50">
+      <title>full-arrow-forward</title>    
+      <path d="M21.84 41L0 19.9744L21.84 0" transform="translate(47 5) scale(-1 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0 1H43.68" transform="translate(47 24) scale(-1 1)" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="attachement" viewBox="0 0 29 42">
+      <title>attachement</title>    
+      <g>
+      <path d="M26 0V26C26 33.6702 20.1885 40 13 40C5.84535 40 0.0322819 33.6653 0 26V9C0 9 -0.863157 0 7 0C14.4191 0 14 9 14 9V29" transform="translate(2 1)" stroke-width="2" stroke-linecap="round"/>
+      </g>
+    </symbol>
+  </defs>
+
+
