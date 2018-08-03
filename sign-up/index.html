@@ -135,7 +135,9 @@
     <div class='background'>
     </div>
     <div class='height-fix'>
+
       <div class='indicator'>
+
         <ul>
           <li class='buble active'>
             <div class='inner-buble'></div>
@@ -151,7 +153,7 @@
             <h4 class='buble-txt'>STEP 2</h4>
           </li>
           <li class='line to-3'>
-              <div class='inner-line'></div>
+            <div class='inner-line'></div>
           </li>
           <li class='buble'>
             <div class='inner-buble'></div>
@@ -161,59 +163,149 @@
         </ul>
 
       </div>
-      <div class='title'>
-        <h2>CREATE ACCOUNT</h2>
-      </div>
-      <form class='sign-up'>
-        <div class='input-wrapper'>
-          <label for='name'>
-            <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <use xlink:href='#name-lines'></use>
-            </svg>
-          </label>
-          <input id='name' type='text' placeholder="Name" autocomplete="off" value='siseer'>
-          <div class='sign-up-tooltip name-tooltip'>
-            <div class='tooltip-arrow'></div>
-            <p>The name must have between 3-15 characters and contain just numbers and english letters.</p>
-          </div>
+      <div class='form-step-one form-step shown'>
+        <div class='title'>
+          <h2>CREATE ACCOUNT</h2>
         </div>
-        <div class='input-wrapper'>
-          <label for='emailz'>
+        <form class='sign-up'>
+          <div class='input-wrapper'>
+            <label for='name'>
+              <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#name-lines'></use>
+              </svg>
+            </label>
+            <input id='name' type='text' placeholder="Name" autocomplete="off" value='siseer'>
+            <div class='sign-up-tooltip name-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>The name must have between 3-15 characters and contain just numbers and english letters.</p>
+            </div>
+          </div>
+          <div class='input-wrapper'>
+            <label for='emailz'>
               <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <use xlink:href='#email'></use>
               </svg>
-          </label>
-          <input id='emailz' type='email' placeholder="Email" autocomplete="off" value='dragos@yahoo.com'>
-          <div class='sign-up-tooltip email-tooltip'>
-            <div class='tooltip-arrow'></div>
-            <p>The email must be valid (example1@yahoo.com), don't forget to complete it.</p>
+            </label>
+            <input id='emailz' type='email' placeholder="Email" autocomplete="off" value='dragos@yahoo.com'>
+            <div class='sign-up-tooltip email-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>The email must be valid (example1@yahoo.com), don't forget to complete it.</p>
+            </div>
           </div>
-        </div>
-        
-        <div class='input-wrapper'>
-          <label for='passwordz'>
-            <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <use xlink:href='#password'></use>
-            </svg>
-          </label>
-          <input id='passwordz' type='password' placeholder="Password" value='1234567'>
-          <div class='sign-up-tooltip password-tooltip'>
-            <div class='tooltip-arrow'></div>
-            <p>The password must have at least 5 characters, contain at least one number.It may contain just numbers, english characters and _ -</p>
+
+          <div class='input-wrapper'>
+            <label for='passwordz'>
+              <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#password'></use>
+              </svg>
+            </label>
+            <input id='passwordz' type='password' placeholder="Password" value='1234567'>
+            <div class='sign-up-tooltip password-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>The password must have at least 5 characters, contain at least one number.It may contain just numbers, english
+                characters and _ -</p>
+            </div>
           </div>
+          <div class='submit-wrapper'>
+            <input type='submit' value='Continue'>
+            <div class='states'>
+              <div class='done'>
+                <svg class='checkmark' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href='#checkmark'></use>
+                </svg>
+              </div>
+              <div class='loading'>
+                <img src='images/loading.gif' alt='Loading...'>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class='form-step-two form-step'>
+        <div class='title'>
+          <h2>VERIFY YOUR EMAIL</h2>
         </div>
-        <input type='submit' value='Continue'>
-      </form>
+        <form class='verify-email'>
+          <div class='input-wrapper'>
+            <label for='secret-code'>
+              <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#name-lines'></use>
+              </svg>
+            </label>
+            <input id='secret-code' type='text' placeholder="Email code" autocomplete="off">
+            <div class='sign-up-tooltip code-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>Complete the code area with the code you have recieved by email.</p>
+            </div>
+          </div>
+          <div class='submit-wrapper'>
+            <input type='submit' value='Continue'>
+            <div class='states'>
+              <div class='done'>
+                <svg class='checkmark' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href='#checkmark'></use>
+                </svg>
+              </div>
+              <div class='loading'>
+                <img src='images/loading.gif' alt='Loading...'>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class='form-step-three form-step'>
+        <div class='title'>
+          <h2>VERIFY EMAIL 2</h2>
+        </div>
+        <form class='verify-email2'>
+          <div class='input-wrapper'>
+            <label for='secret-code2'>
+              <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#name-lines'></use>
+              </svg>
+            </label>
+            <input id='secret-code2' type='text' placeholder="Email code" autocomplete="off">
+            <div class='sign-up-tooltip code-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>Complete the code area with the code you have recieved by email.</p>
+            </div>
+          </div>
+          <div class='input-wrapper'>
+            <label for='password2'>
+              <svg class='icon' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <use xlink:href='#password'></use>
+              </svg>
+            </label>
+            <input id='password2' type='password' placeholder="Password">
+            <div class='sign-up-tooltip password-tooltip'>
+              <div class='tooltip-arrow'></div>
+              <p>The password does not match with the one you have choose.</p>
+            </div>
+          </div>
+          <div class='submit-wrapper'>
+            <input type='submit' value='Continue'>
+            <div class='states'>
+              <div class='done'>
+                <svg class='checkmark' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <use xlink:href='#checkmark'></use>
+                </svg>
+              </div>
+              <div class='loading'>
+                <img src='images/loading.gif' alt='Loading...'>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
       <div class='conditions'>
         <a href='#'>Terms & Conditions</a>
       </div>
     </div>
   </div>
 
-  <script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+    crossorigin="anonymous"></script>
   <script type='text/javascript' src='script/nav-bar.js'></script>
   <script type='text/javascript' src='script/svgs-loader.js'></script>
   <script type='text/javascript' src='script/form-submit.js'></script>

@@ -30,7 +30,7 @@ body
     box-sizing border-box
     padding 80px 0 45px
   .height-fix
-    flexCenter(column)
+    flexCenter(column , space-between)
     height 100vh
     padding 20px 0
     box-sizing border-box
@@ -53,10 +53,24 @@ body
 
 .title
   flexCenter()
-  flex-grow 2
+  margin-bottom 50px
   @media screen and (min-width 500px)
     font-size 25px
 
+
+.form-step
+  flex-grow 1
+  flex-direction column
+  width 100%
+  display flex
+  align-items center
+  justify-content center
+  opacity 0
+  transition .2s linear opacity
+  &.shown
+    display flex 
+    opacity 1
+  
 form
   position relative
   z-index 3
@@ -66,16 +80,28 @@ form
   min-width 250px
   flexCenter(column)
   margin-bottom 35px
+  &.waiting
+    .loading
+      flexCenter()
+    input[type="submit"]
+      width inputHeight
   input 
     color #fff
-  input[type="submit"]
+  .submit-wrapper
     width 100%
     height inputHeight
+    position relative
+    margin-top 40px
+    overflow hidden
+    flexCenter()
+  input[type="submit"]
+    transition .2s linear all
+    width 100%
+    height 100%
     background rgba(#fff , 0)
     border-radius 50px
     border 2px solid rgba(#fff , .2)
     cursor pointer
-    margin-top 40px
     &:hover
       background rgba(#fff , .1)
   .input-wrapper
@@ -107,6 +133,46 @@ form
       border-radius 50px
     ::placeholder
       color #fff
+
+.states
+  position absolute
+  flexCenter(column)
+  top 0
+  transform translateY(-55px)
+  transition .2s cubic-bezier(0, 0, 0.18, 1.33) all
+  &.complete
+    transform translateY(0px)
+  .done
+    background-color #2ecc71
+    fill white
+    border-radius 50%
+    flexCenter()
+    width inputHeight
+    height inputHeight
+    opacity .8
+    svg 
+      width 30px
+      height 30px
+
+.loading
+  opacity 0
+  animation fadeIn .2s .3s linear forwards
+  display none
+  width inputHeight
+  height inputHeight
+  img 
+    width 50%
+    opacity .5
+
+.form-step-two,
+.form-step-three
+  display none
+  opacity 0
+  animation fadeIn .3s .4s linear 
+  .submit-wrapper
+    margin-top 10px
+
+
 
 .conditions a
   color rgba(255,255,255,.5)

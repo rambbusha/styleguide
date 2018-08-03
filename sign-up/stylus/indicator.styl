@@ -31,10 +31,13 @@ lowOpacity = .3
         height 100%
         position absolute
         opacity 0
-        transition 5s linear all
-      &.active .outer-buble
-        opacity 1
+        transition .2s linear all
         border 1px solid white
+        transform scale(.5)
+      &.active .outer-buble
+        transform scale(1) 
+        transition-delay .5s
+        opacity 1      
       .inner-buble
         width bubleRadius
         height bubleRadius
@@ -49,7 +52,7 @@ lowOpacity = .3
         height 100%
         width 0%
         background-color white
-        transition 1s cubic-bezier(0.25, 0.82, 1, 1) all
+        transition .5s .2s cubic-bezier(0.25, 0.82, 1, 1) all
         
 li.buble.active > h4.buble-txt
   color #fff
